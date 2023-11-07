@@ -1,33 +1,38 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({ bgColor = 'bg-transparent', linkColor = 'text-white' }) => {
   return (
-    <nav className="bg-transparent absolute text-white shadow-lg">
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between">
-          <div className="flex space-x-4">
-            {/* Logo and Home link */}
+    <nav className={`${bgColor} absolute top-0 left-0 w-full transition duration-300`}>
+      <div className="container mx-auto px-4 py-5 flex justify-between items-center">
+        {/* Logo and Home link */}
+        <Link to="/">
+          <img src="/images/F1-logo.png" alt="F1 logo" className="w-28 h-auto" />
+        </Link>
 
-            {/* Primary Nav Links */}
-            <div className="flex items-center space-x-1">
-            <Link to="/" className="py-5 px-3 hover:bg-gray-700 rounded transition duration-300">
+        {/* Primary Nav Links */}
+        <ul className="flex items-center space-x-4">
+          <li>
+            <Link to="/" className={`${linkColor} hover:text-f1-red rounded px-3 py-2 transition duration-300`}>
               Home
             </Link>
-              <Link to="/teams-and-drivers" className="py-5 px-3 hover:bg-gray-700 rounded transition duration-300">
-                Teams & Drivers
-              </Link>
-              <Link to="/races" className="py-5 px-3 hover:bg-gray-700 rounded transition duration-300">
-                Races
-              </Link>
-              <Link to="/quiz" className="py-5 px-3 hover:bg-gray-700 rounded transition duration-300">
-                Quiz
-              </Link>
-            </div>
-          </div>
-
-          {/* Secondary Nav Links, or user-related links could go here */}
-        </div>
+          </li>
+          <li>
+            <Link to="/teams-and-drivers" className={`${linkColor} hover:text-f1-red rounded px-3 py-2 transition duration-300`}>
+              Teams & Drivers
+            </Link>
+          </li>
+          <li>
+            <Link to="/races" className={`${linkColor} hover:text-f1-red rounded px-3 py-2 transition duration-300`}>
+              Races
+            </Link>
+          </li>
+          <li>
+            <Link to="/quiz" className={`${linkColor} hover:text-f1-red rounded px-3 py-2 transition duration-300`}>
+              Quiz
+            </Link>
+          </li>
+        </ul>
       </div>
     </nav>
   );

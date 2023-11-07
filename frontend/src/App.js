@@ -11,7 +11,6 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <Navbar />
         <Routes>
           <Route path="/" element={<Frontpage />} />
           <Route path="/teams-and-drivers" element={<TeamsAndDriversPage />} />
