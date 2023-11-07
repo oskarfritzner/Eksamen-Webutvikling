@@ -1,38 +1,44 @@
 using Microsoft.AspNetCore.Mvc;
 using backend.Models;
 using backend.Data;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
-[ApiController]
-[Route("[controller]")]
-public class RacesController : ControllerBase
+namespace backend.Controllers
 {
-    private readonly AppDbContext _context;
-
-    public RacesController(AppDbContext context)
+    [ApiController]
+    [Route("[controller]")]
+    public class RacesController : ControllerBase
     {
-        _context = context;
-    }
+        private readonly AppDbContext _context;
 
-    // GET: api/races
-    [HttpGet]
-    public async Task<ActionResult<IEnumerable<Race>>> GetRaces()
-    {
-        return await _context.Races.ToListAsync();
-    }
-
-    // GET: api/races/5
-    [HttpGet("{id}")]
-    public async Task<ActionResult<Race>> GetRace(int id)
-    {
-        var race = await _context.Races.FindAsync(id);
-
-        if (race == null)
+        public RacesController(AppDbContext context)
         {
-            return NotFound();
+            _context = context;
         }
 
-        return race;
-    }
+        // GET: api/races
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Race>>> GetRaces()
+        {
+            return await _context.Races.ToListAsync();
+        }
 
-    // POST, PUT, DELETE actions would be implemented here as well
+        // GET: api/races/5
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Race>> GetRace(int id)
+        {
+            var race = await _context.Races.FindAsync(id);
+
+            if (race == null)
+            {
+                return NotFound();
+            }
+
+            return race;
+        }
+
+        // POST, PUT, DELETE actions would be implemented here as well
+    }
 }

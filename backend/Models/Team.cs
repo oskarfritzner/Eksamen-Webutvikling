@@ -1,3 +1,4 @@
+namespace backend.Models {
 public class Team
 {
     public int Id { get; set; }
@@ -7,4 +8,6 @@ public class Team
     public int Driver2Id { get; set; } // Assuming this is a foreign key to a Driver
     public Driver Driver1 { get; set; }
     public Driver Driver2 { get; set; }
+}
+
 }

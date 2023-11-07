@@ -1,3 +1,7 @@
+using Microsoft.EntityFrameworkCore;
+using backend.Models; // Make sure to reference the Models namespace if it's in a separate file.
+using backend.Data; // Make sure to reference the Data namespace if it's in a separate file.
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
