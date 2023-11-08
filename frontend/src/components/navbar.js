@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Navbar = ({ bgColor = 'bg-transparent', linkColor = 'text-white' }) => {
   return (
     <nav className={`${bgColor} absolute top-0 left-0 w-full transition duration-300`}>
-      <div className="container mx-auto px-4 py-5 flex justify-between items-center">
+      <div className="container mb-4 mx-auto px-4 py-5 flex justify-between items-center">
         {/* Logo and Home link */}
         <Link to="/">
           <img src="/images/F1-logo.png" alt="F1 logo" className="w-28 h-auto" />

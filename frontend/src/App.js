@@ -6,6 +6,7 @@ import Frontpage from './pages/frontpage';
 import Quiz from './pages/quiz-page';
 import Races from './pages/races-page';
 import TeamsAndDriversPage from './pages/teams-and-drivers-page';
+import RegisterDriver from './pages/registration-page';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/teams-and-drivers" element={<TeamsAndDriversPage />} />
           <Route path="/races" element={<Races />} />
           <Route path="/quiz" element={<Quiz />} />
+          <Route path="/register-driver" element={<RegisterDriver />} />
         </Routes>
       </BrowserRouter>
     </div>
