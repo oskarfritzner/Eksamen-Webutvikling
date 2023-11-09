@@ -13,11 +13,23 @@ namespace backend.Data
         public DbSet<Team> Teams { get; set; }
         public DbSet<Race> Races { get; set; }
 
-        // You can also override OnModelCreating method if needed to configure the model further
-        // protected override void OnModelCreating(ModelBuilder modelBuilder)
-        // {
-        //     base.OnModelCreating(modelBuilder);
-        //     // Model configuration goes here
-        // }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Team>()
+                .HasMany(t => t.Drivers)
+                .WithOne()
+                .HasForeignKey(d => d.TeamId) // Assuming there's a TeamId foreign key in the Driver model
+                .OnDelete(DeleteBehavior.Restrict); // Prevent cascade delete
+
+            modelBuilder.Entity<Race>()
+                .HasOne(r => r.Winner)
+                .WithOne()
+                .HasForeignKey<Race>(r => r.WinnerId)
+                .OnDelete(DeleteBehavior.Restrict); // Prevent cascade delete if a winner is deleted
+
+            // Add any additional model configuration here
+        }
     }
 }
