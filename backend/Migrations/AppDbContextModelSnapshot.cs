@@ -38,18 +38,7 @@ namespace backend.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("TeamId")
-                        .IsRequired()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("TeamId1")
-                        .HasColumnType("INTEGER");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("TeamId");
-
-                    b.HasIndex("TeamId1");
 
                     b.ToTable("Drivers");
                 });
@@ -60,9 +49,6 @@ namespace backend.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("DriverId")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("GrandPrix")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -70,18 +56,14 @@ namespace backend.Migrations
                     b.Property<int>("NumberOfLaps")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("WinnerId")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Winner")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.Property<TimeSpan>("WinnerTime")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("DriverId");
-
-                    b.HasIndex("WinnerId")
-                        .IsUnique();
 
                     b.ToTable("Races");
                 });
@@ -103,48 +85,6 @@ namespace backend.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Teams");
-                });
-
-            modelBuilder.Entity("backend.Models.Driver", b =>
-                {
-                    b.HasOne("backend.Models.Team", null)
-                        .WithMany("Drivers")
-                        .HasForeignKey("TeamId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("backend.Models.Team", "Team")
-                        .WithMany()
-                        .HasForeignKey("TeamId1")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Team");
-                });
-
-            modelBuilder.Entity("backend.Models.Race", b =>
-                {
-                    b.HasOne("backend.Models.Driver", null)
-                        .WithMany("RacesWon")
-                        .HasForeignKey("DriverId");
-
-                    b.HasOne("backend.Models.Driver", "Winner")
-                        .WithOne()
-                        .HasForeignKey("backend.Models.Race", "WinnerId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Winner");
-                });
-
-            modelBuilder.Entity("backend.Models.Driver", b =>
-                {
-                    b.Navigation("RacesWon");
-                });
-
-            modelBuilder.Entity("backend.Models.Team", b =>
-                {
-                    b.Navigation("Drivers");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "qFH571DNy2BGPDDMMSGqxM201QZFLGuYIbrr/4onRDU=",
+  "Hash": "M1D71cSFPnABHE6Sdgt2fQJY/bJqY4s25eLXK87DigM=",
   "Source": "backend",
   "BasePath": "_content/backend",
   "Mode": "Default",
@@ -15,5 +15,40 @@
       "Pattern": "**"
     }
   ],
-  "Assets": []
+  "Assets": [
+    {
+      "Identity": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/images/BLI EN AV OSS OG FINN DIN NESTE JOBB (2)_20231109145713.png",
+      "SourceId": "backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/",
+      "BasePath": "_content/backend",
+      "RelativePath": "images/BLI EN AV OSS OG FINN DIN NESTE JOBB (2)_20231109145713.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/BLI EN AV OSS OG FINN DIN NESTE JOBB (2)_20231109145713.png"
+    },
+    {
+      "Identity": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/images/Design uten navn (30) (1)_20231109145714.png",
+      "SourceId": "backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/",
+      "BasePath": "_content/backend",
+      "RelativePath": "images/Design uten navn (30) (1)_20231109145714.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/Design uten navn (30) (1)_20231109145714.png"
+    }
+  ]
 }

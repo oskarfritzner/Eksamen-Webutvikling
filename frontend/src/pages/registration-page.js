@@ -1,53 +1,73 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Navbar from '../components/navbar';
+import { uploadImage } from '../services/imageServices';
 
 const RegisterDriver = () => {
   const [formData, setFormData] = useState({
     name: '',
     age: '',
     nationality: '',
-    image: null,
+    teamManufacturer: '',
+    driverImage: null,
+    teamImage: null,
   });
 
   const handleChange = (e) => {
+    const value = e.target.type === 'file' ? e.target.files[0] : e.target.value;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.type === 'file' ? e.target.files[0] : e.target.value,
+      [e.target.name]: value,
     });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    const url = 'https://yourapi.com/drivers';
-    const formDataToSend = new FormData();
-
-    // Append data to formDataToSend
-    for (const key in formData) {
-      formDataToSend.append(key, formData[key]);
+  
+    // Upload driver image and get the URL
+    const driverImageUrl = await uploadImage(formData.driverImage);
+    if (!driverImageUrl) {
+      console.error('Failed to upload driver image');
+      return;
     }
-
+  
+    // Upload team image and get the URL
+    const teamImageUrl = await uploadImage(formData.teamImage);
+    if (!teamImageUrl) {
+      console.error('Failed to upload team image');
+      return;
+    }
+  
+    // Create a driver with the returned image URLs
+    const driverData = {
+      ...formData,
+      driverImage: driverImageUrl, // Use the URL from the image upload for the driver image
+      teamImage: teamImageUrl,     // Use the URL from the image upload for the team image
+    };
+  
     try {
-      const response = await axios.post(url, formDataToSend, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      });
-      // Handle success (e.g., display a message or redirect)
-      console.log(response.data); // You might want to show a success message or redirect the user
+      // Post the driver data to your driver creation endpoint
+      const driverResponse = await axios.post('https://localhost:7093/Drivers/create-with-team', driverData);
+  
+      console.log(driverResponse.data); // Success
     } catch (error) {
-      // Handle error (e.g., display error message)
-      console.error(error); // You might want to show an error message to the user
+      console.error(error); // Handle the error
     }
   };
+  
+  
 
   return (
     <>
-      <Navbar bgColor="bg-white" linkColor="black" />
+      <Navbar
+        bgColor="bg-white"
+        linkColor="black" 
+        position='relative'
+      />
+
       <div className='flex items-center justify-center h-screen'>
         <div className='w-full max-w-xl p-8'>
-          <h2 className="text-center text-3xl font-semibold mb-4">Register as a Driver</h2>
+          <h2 className="text-center text-3xl font-semibold mb-4">Register as a Pro Driver</h2>
           <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
             <div className="mb-4">
               <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
@@ -55,32 +75,44 @@ const RegisterDriver = () => {
               </label>
               <input type="text" name="name" value={formData.name} onChange={handleChange} required className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
             </div>
+
             <div className="mb-4">
               <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="age">
                 Age
               </label>
               <input type="number" name="age" value={formData.age} onChange={handleChange} required className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" />
             </div>
+
             <div className="mb-4">
               <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="nationality">
                 Nationality
               </label>
               <input type="text" name="nationality" value={formData.nationality} onChange={handleChange} required className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
             </div>
+
             <div className="mb-4">
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="nationality">
-                Team
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="teamManufacturer">
+                Team Manufacturer
               </label>
-              <input type="text" name="nationality" value={formData.nationality} onChange={handleChange} required className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+              <input type="text" name="teamManufacturer" value={formData.teamManufacturer} onChange={handleChange} required className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
             </div>
+
             <div className="mb-4">
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="image">
-                Image
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="driverImage">
+                Driver Image
               </label>
-              <input type="file" name="image" onChange={handleChange} required className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+              <input type="file" name="driverImage" onChange={handleChange} required className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
             </div>
+
+            <div className="mb-4">
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="teamImage">
+                Team Image
+              </label>
+              <input type="file" name="teamImage" onChange={handleChange} required className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+            </div>
+
             <div className="flex items-center justify-center">
-              <button type="submit" className="bg-f1-red hover:bg-red-700 text-white font-bold mt-4 py-2 w-full rounded focus:outline-none focus:shadow-outline" style={{ transition: 'background-color 0.3s' }}>
+              <button type="submit" className="bg-f1-red hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" style={{ transition: 'background-color 0.3s' }}>
                 Register Driver
               </button>
             </div>

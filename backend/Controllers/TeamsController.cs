@@ -4,7 +4,6 @@ using backend.Data;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
 
 namespace backend.Controllers
 {
@@ -20,19 +19,19 @@ namespace backend.Controllers
         }
 
         // GET: api/teams
-        // Retrieves all teams, including the drivers associated with each team.
+        // Retrieves all teams.
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Team>>> GetTeams()
         {
-            return await _context.Teams.Include(t => t.Drivers).ToListAsync();
+            return await _context.Teams.ToListAsync();
         }
 
         // GET: api/teams/5
-        // Retrieves a single team by ID, including its drivers.
+        // Retrieves a single team by ID.
         [HttpGet("{id}")]
         public async Task<ActionResult<Team>> GetTeam(int id)
         {
-            var team = await _context.Teams.Include(t => t.Drivers).SingleOrDefaultAsync(t => t.Id == id);
+            var team = await _context.Teams.FindAsync(id);
 
             if (team == null)
             {
@@ -42,30 +41,19 @@ namespace backend.Controllers
             return team;
         }
 
-// POST: api/teams
-// This action method responds to HTTP POST requests to add a new team.
-[HttpPost]
-public async Task<ActionResult<Team>> PostTeam([FromBody] Team team, [FromQuery] string imageUrl)
-{
-    // Validate the input here as necessary.
+        // POST: api/teams
+        // This action method responds to HTTP POST requests to add a new team.
+        [HttpPost]
+        public async Task<ActionResult<Team>> PostTeam([FromBody] Team team)
+        {
+            // Adds the new team to the context.
+            _context.Teams.Add(team);
+            // Asynchronously saves the changes to the database.
+            await _context.SaveChangesAsync();
 
-    if (string.IsNullOrEmpty(imageUrl))
-    {
-        return BadRequest("Image URL must be provided.");
-    }
-
-    // Set the team's image to the provided URL
-    team.Image = imageUrl;
-
-    // Adds the new team to the context.
-    _context.Teams.Add(team);
-    // Asynchronously saves the changes to the database.
-    await _context.SaveChangesAsync();
-
-    // Returns a HTTP 201 Created response with the location header set to the URI of the new team.
-    return CreatedAtAction(nameof(GetTeam), new { id = team.Id }, team);
-}
-
+            // Returns a HTTP 201 Created response with the location header set to the URI of the new team.
+            return CreatedAtAction(nameof(GetTeam), new { id = team.Id }, team);
+        }
 
         // PUT: api/teams/5
         // Updates an existing team.

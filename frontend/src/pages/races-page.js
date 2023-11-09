@@ -7,6 +7,7 @@ const Races = () => {
             <Navbar
             bgColor="bg-white"
             linkColor="black"
+            position='relative'
             />
             {/* ...rest of the component */}
         </div>

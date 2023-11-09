@@ -15,21 +15,11 @@ namespace backend.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // If you're not configuring any relationships, this method can be empty
+            // But you still need to call the base method
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Team>()
-                .HasMany(t => t.Drivers)
-                .WithOne()
-                .HasForeignKey(d => d.TeamId) // Assuming there's a TeamId foreign key in the Driver model
-                .OnDelete(DeleteBehavior.Restrict); // Prevent cascade delete
-
-            modelBuilder.Entity<Race>()
-                .HasOne(r => r.Winner)
-                .WithOne()
-                .HasForeignKey<Race>(r => r.WinnerId)
-                .OnDelete(DeleteBehavior.Restrict); // Prevent cascade delete if a winner is deleted
-
-            // Add any additional model configuration here
+            // No further configuration is necessary since there are no relationships
         }
     }
 }
