@@ -8,9 +8,7 @@ const RegisterDriver = () => {
     name: '',
     age: '',
     nationality: '',
-    teamManufacturer: '',
     driverImage: null,
-    teamImage: null,
   });
 
   const handleChange = (e) => {
@@ -31,39 +29,30 @@ const RegisterDriver = () => {
       return;
     }
   
-    // Upload team image and get the URL
-    const teamImageUrl = await uploadImage(formData.teamImage);
-    if (!teamImageUrl) {
-      console.error('Failed to upload team image');
-      return;
-    }
-  
-    // Create a driver with the returned image URLs
+    // Parse age to integer and correct the driverImage property to match the backend model
     const driverData = {
-      ...formData,
-      driverImage: driverImageUrl, // Use the URL from the image upload for the driver image
-      teamImage: teamImageUrl,     // Use the URL from the image upload for the team image
+      name: formData.name,
+      age: parseInt(formData.age, 10), // Parse age to a number
+      nationality: formData.nationality,
+      Image: driverImageUrl, // Correct the property name to match the backend model
     };
+  
+    console.log(driverData);
   
     try {
       // Post the driver data to your driver creation endpoint
-      const driverResponse = await axios.post('https://localhost:7093/Drivers/create-with-team', driverData);
+      const response = await axios.post('https://localhost:7093/Drivers', driverData);
   
-      console.log(driverResponse.data); // Success
+      console.log(response.data); // Success
     } catch (error) {
       console.error(error); // Handle the error
     }
   };
   
-  
 
   return (
     <>
-      <Navbar
-        bgColor="bg-white"
-        linkColor="black" 
-        position='relative'
-      />
+      <Navbar bgColor="bg-white" linkColor="black" position='relative' />
 
       <div className='flex items-center justify-center h-screen'>
         <div className='w-full max-w-xl p-8'>
@@ -91,24 +80,10 @@ const RegisterDriver = () => {
             </div>
 
             <div className="mb-4">
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="teamManufacturer">
-                Team Manufacturer
-              </label>
-              <input type="text" name="teamManufacturer" value={formData.teamManufacturer} onChange={handleChange} required className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
-            </div>
-
-            <div className="mb-4">
               <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="driverImage">
                 Driver Image
               </label>
               <input type="file" name="driverImage" onChange={handleChange} required className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
-            </div>
-
-            <div className="mb-4">
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="teamImage">
-                Team Image
-              </label>
-              <input type="file" name="teamImage" onChange={handleChange} required className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
             </div>
 
             <div className="flex items-center justify-center">
