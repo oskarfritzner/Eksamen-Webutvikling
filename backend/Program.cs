@@ -1,14 +1,11 @@
 using Microsoft.EntityFrameworkCore;
-using backend.Models; // Make sure to reference the Models namespace if it's in a separate file.
-using backend.Data; // Make sure to reference the Data namespace if it's in a separate file.
+using backend.Models;
+using backend.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
-
-// Add CORS services and define a policy
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowLocalhost3000",
@@ -17,10 +14,8 @@ builder.Services.AddCors(options =>
             .AllowAnyHeader()
             .AllowCredentials());
 });
-
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
-
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -37,6 +32,9 @@ app.UseHttpsRedirection();
 
 // Use CORS policy
 app.UseCors("AllowLocalhost3000");
+
+// Enable static files to be served. This will allow images in wwwroot to be served.
+app.UseStaticFiles();
 
 app.UseAuthorization();
 
