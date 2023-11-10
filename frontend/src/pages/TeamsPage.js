@@ -1,7 +1,7 @@
 import React from 'react';
-import Navbar from "../components/navbar";
+import Navbar from "../components/Navigation-Bar";
 
-const TeamsAndDriversPage = () => {
+const TeamsPage = () => {
     return(
         <div>
             <Navbar
@@ -9,9 +9,9 @@ const TeamsAndDriversPage = () => {
             linkColor="black"
             position="relative"
             />
-            {/* ...rest of the component */}
+            
         </div>
     )
 }
 
-export default TeamsAndDriversPage;
+export default TeamsPage;

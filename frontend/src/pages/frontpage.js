@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Navbar from "../components/navbar";
+import Navbar from "../components/Navigation-Bar";
 
 const Frontpage = () => {
     const backgroundImageUrl = "/images/bg-frontpage1.jpg";

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import Navbar from '../components/navbar';
+import Navbar from '../components/Navigation-Bar';
 import { uploadImage } from '../services/imageServices';
 
 const RegisterDriver = () => {
@@ -37,8 +37,6 @@ const RegisterDriver = () => {
       Image: driverImageUrl, // Correct the property name to match the backend model
     };
   
-    console.log(driverData);
-  
     try {
       // Post the driver data to your driver creation endpoint
       const response = await axios.post('https://localhost:7093/Drivers', driverData);
@@ -56,7 +54,7 @@ const RegisterDriver = () => {
 
       <div className='flex items-center justify-center h-screen'>
         <div className='w-full max-w-xl p-8'>
-          <h2 className="text-center text-3xl font-semibold mb-4">Register as a Pro Driver</h2>
+          <h2 className="text-center text-3xl font-semibold mb-4">Register Driver</h2>
           <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
             <div className="mb-4">
               <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">

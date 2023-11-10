@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Navbar from './components/navbar'; // Ensure you have the correct path to your Navbar component
-import Frontpage from './pages/frontpage';
-import Quiz from './pages/quiz-page';
-import Races from './pages/races-page';
-import TeamsAndDriversPage from './pages/teams-and-drivers-page';
-import RegisterDriver from './pages/registration-page';
+import Frontpage from './pages/FrontPage.js';
+import Quiz from './pages/QuizPage.js';
+import Races from './pages/RacesPage.js';
+import DriversPage from './pages/DriversPage.js';
+import TeamsPage from './pages/TeamsPage.js';
+import RegisterDriver from './pages/RegistrationPage.js';
 
 function App() {
   return (
@@ -14,7 +14,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Frontpage />} />
-          <Route path="/teams-and-drivers" element={<TeamsAndDriversPage />} />
+          <Route path='Drivers' element={<DriversPage />} />
+          <Route path="/teams" element={<TeamsPage />} />
           <Route path="/races" element={<Races />} />
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/register-driver" element={<RegisterDriver />} />

@@ -18,8 +18,13 @@ const Navbar = ({ bgColor = 'bg-transparent', linkColor = 'text-white', position
             </Link>
           </li>
           <li>
-            <Link to="/teams-and-drivers" className={`${linkColor} hover:text-f1-red rounded px-3 py-2 transition duration-300`}>
-              Teams & Drivers
+            <Link to="/drivers" className={`${linkColor} hover:text-f1-red rounded px-3 py-2 transition duration-300`}>
+              Drivers
+            </Link>
+          </li>
+          <li>
+            <Link to="/teams" className={`${linkColor} hover:text-f1-red rounded px-3 py-2 transition duration-300`}>
+              Teams
             </Link>
           </li>
           <li>

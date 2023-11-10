@@ -1,7 +1,7 @@
 import React from 'react';
-import Navbar from "../components/navbar";
+import Navbar from "../components/Navigation-Bar";
 
-const Races = () => {
+const QuizPage = () => {
     return(
         <div>
             <Navbar
@@ -14,4 +14,4 @@ const Races = () => {
     )
 }
 
-export default Races;
+export default QuizPage;
