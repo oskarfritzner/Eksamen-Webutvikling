@@ -13,5 +13,27 @@ const getAllDrivers = async () => {
     }
 };
 
-// Export other functions similarly
-export { getAllDrivers };
+// Function to update a driver
+const updateDriver = async (driverId, driverData) => {
+    try {
+        const response = await axios.put(`${API_URL}/${driverId}`, driverData);
+        return response.data;
+    } catch (error) {
+        console.error("Error updating driver:", error);
+        throw error;
+    }
+};
+
+// Function to delete a driver
+const deleteDriver = async (driverId) => {
+    try {
+        const response = await axios.delete(`${API_URL}/${driverId}`);
+        return response.data;
+    } catch (error) {
+        console.error("Error deleting driver:", error);
+        throw error;
+    }
+};
+
+// Export the functions
+export { getAllDrivers, updateDriver, deleteDriver };
