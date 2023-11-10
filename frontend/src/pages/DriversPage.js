@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from "../components/Navigation-Bar";
-import { getAllDrivers, updateDriver, deleteDriver } from '../services/driverServices'; // Import the necessary functions
+import { getAllDrivers, updateDriver, deleteDriver } from '../services/driverServices';
 
 const DriversPage = () => {
     const [drivers, setDrivers] = useState([]);
+    const [editDriverId, setEditDriverId] = useState(null);
+    const [editFormData, setEditFormData] = useState({ name: '', age: '', nationality: '', image: '' });
+
     const backendBaseUrl = 'https://localhost:7093';
 
     useEffect(() => {
@@ -19,52 +22,81 @@ const DriversPage = () => {
         }
     };
 
-    const handleEdit = async (driverId, newDetails) => {
-        try {
-            await updateDriver(driverId, newDetails);
-            fetchDrivers(); // Refresh the list after update
-        } catch (error) {
-            console.error("Failed to update driver:", error);
-        }
+    const handleEditClick = (driver) => {
+        setEditDriverId(driver.id);
+        setEditFormData({ 
+            name: driver.name, 
+            age: driver.age, 
+            nationality: driver.nationality,
+            image: driver.image // Include the image URL
+        });
     };
 
-    const handleDelete = async (driverId) => {
-        try {
-            await deleteDriver(driverId);
-            fetchDrivers(); // Refresh the list after deletion
-        } catch (error) {
-            console.error("Failed to delete driver:", error);
-        }
+    const handleEditFormChange = (e) => {
+        setEditFormData({ ...editFormData, [e.target.name]: e.target.value });
+    };
+
+    const handleConfirmClick = async () => {
+        const updatedDriver = { ...editFormData, id: editDriverId };
+        await updateDriver(updatedDriver);
+        setEditDriverId(null);
+        fetchDrivers();
+    };
+
+    const handleDeleteClick = async (driverId) => {
+        await deleteDriver(driverId);
+        fetchDrivers();
     };
 
     return (
         <div>
             <Navbar bgColor="bg-white" linkColor="black" position="relative" />
-            <div className="container mx-auto p-4">
+            <div className="p-4">
                 <h2 className="text-2xl font-bold mb-4">Drivers</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                     {drivers.map(driver => (
-                        <div key={driver.id} className="bg-white rounded overflow-hidden shadow-lg">
+                        <div key={driver.id} className="bg-white rounded-lg shadow-lg p-4">
                             <img 
-                                src={`${backendBaseUrl}${driver.image}`} 
+                                src={`${backendBaseUrl}${driver.image}`}
                                 alt={driver.name} 
-                                className="w-full h-48 object-cover"
+                                className="w-48 h-48 object-cover rounded-full mx-auto"
                             />
-                            <div className="p-4">
-                                <h3 className="text-lg font-semibold">{driver.name}</h3>
-                                <p className="text-sm"><strong>Age:</strong> {driver.age}</p>
-                                <p className="text-sm"><strong>Nationality:</strong> {driver.nationality}</p>
-                                <button 
-                                    onClick={() => handleEdit(driver.id, { /* New details here */ })}
-                                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                                    Edit
-                                </button>
-                                <button 
-                                    onClick={() => handleDelete(driver.id)}
-                                    className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-2">
-                                    Delete
-                                </button>
-                            </div>
+                            {editDriverId === driver.id ? (
+                                <div>
+                                    <input 
+                                        type="text" 
+                                        name="name" 
+                                        value={editFormData.name} 
+                                        onChange={handleEditFormChange}
+                                        className="mt-2 p-2 border rounded w-full"
+                                    />
+                                    <input 
+                                        type="number" 
+                                        name="age" 
+                                        value={editFormData.age} 
+                                        onChange={handleEditFormChange}
+                                        className="mt-2 p-2 border rounded w-full"
+                                    />
+                                    <input 
+                                        type="text" 
+                                        name="nationality" 
+                                        value={editFormData.nationality} 
+                                        onChange={handleEditFormChange}
+                                        className="mt-2 p-2 border rounded w-full"
+                                    />
+                                    <button onClick={handleConfirmClick} className="mt-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Confirm</button>
+                                </div>
+                            ) : (
+                                <div className='mt-8'>
+                                    <h3 className="text-lg font-semibold">{driver.name}</h3>
+                                    <p>Age: {driver.age}</p>
+                                    <p>Nationality: {driver.nationality}</p>
+                                    <div className="flex justify-between mt-3">
+                                        <button onClick={() => handleEditClick(driver)} className="px-4 py-1 bg-yellow-500 text-white text-xs rounded hover:bg-yellow-600">Edit</button>
+                                        <button onClick={() => handleDeleteClick(driver.id)} className="px-4 py-1 bg-red-500 text-white text-xs rounded hover:bg-red-600">Delete</button>
+                                    </div>
+                                </div>
+                            )}
                         </div>
                     ))}
                 </div>

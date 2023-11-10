@@ -45,13 +45,18 @@ namespace backend.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutDriver(int id, Driver driver)
+        public async Task<IActionResult> PutDriver(int id, [FromBody] Driver driverUpdate)
         {
-            if (id != driver.Id)
+            var driver = await _context.Drivers.FindAsync(id);
+            if (driver == null)
             {
-                return BadRequest();
+                return NotFound();
             }
-            _context.Entry(driver).State = EntityState.Modified;
+
+            driver.Name = driverUpdate.Name;
+            driver.Age = driverUpdate.Age;
+            driver.Nationality = driverUpdate.Nationality;
+            // Do not update the image field
 
             try
             {
@@ -88,15 +93,5 @@ namespace backend.Controllers
         {
             return _context.Drivers.Any(e => e.Id == id);
         }
-
-        // This method will be part of a TeamController or similar
-        /*
-        [HttpPost("create-with-team")]
-        public IActionResult CreateDriverWithTeam([FromBody] Driver driver)
-        {
-            // Logic to handle driver creation with a team
-            // ...
-        }
-        */
     }
 }
