@@ -59,8 +59,8 @@ const RacesPage = () => {
     return (
         <div>
             <Navbar bgColor="bg-white" linkColor="black" position="relative" />
-            <div className="p-4 flex mt-4 mx-4"> {/* Added margins */}
-                <div className="w-3/4 pr-4"> {/* Added right padding */}
+            <div className="p-4 flex mt-4 mx-4"> 
+                <div className="w-3/4 pr-4">
                     <h2 className="text-2xl font-bold mb-4">Races</h2>
                     <div className="border-b border-gray-200">
                         {races.map(race => (

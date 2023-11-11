@@ -12,14 +12,13 @@ namespace backend.Data
         public DbSet<Driver> Drivers { get; set; }
         public DbSet<Team> Teams { get; set; }
         public DbSet<Race> Races { get; set; }
+        public DbSet<Question> Questions { get; set; } // Added for the quiz questions
+        public DbSet<Participant> Participants { get; set; } // Added for quiz participants
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // If you're not configuring any relationships, this method can be empty
-            // But you still need to call the base method
             base.OnModelCreating(modelBuilder);
 
-            // No further configuration is necessary since there are no relationships
         }
     }
 }
