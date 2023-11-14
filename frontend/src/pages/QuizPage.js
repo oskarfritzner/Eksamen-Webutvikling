@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from "../components/Navigation-Bar";
+import QuizStart from "../components/Quiz/QuizStart"; // Adjust the path as necessary
+import QuizQuestion from "../components/Quiz/QuizQuestion"; // Adjust the path as necessary
+import QuizResult from "../components/Quiz/QuizResult"; // Adjust the path as necessary
+import Leaderboard from "../components/Quiz/Leaderboard"; // Adjust the path as necessary
 import { getQuestions, submitQuizResult, getParticipants } from '../services/quizServices';
 
 const QuizPage = () => {
@@ -82,77 +86,28 @@ const QuizPage = () => {
         await submitQuizResult(username, totalScore);
     };
 
-        // Reset quizCompleted when username changes
-        useEffect(() => {
-            setQuizCompleted(false);
-        }, [username]);
+    // Reset quizCompleted when username changes
+    useEffect(() => {
+        setQuizCompleted(false);
+    }, [username]);
 
-        return (
-            <div className="bg-black text-white min-h-screen">
-                <Navbar />
-                <div className="container mx-auto p-4 flex flex-col items-center min-h-screen">
-                    {/* Quiz Game Section */}
-                    <div className="w-full max-w-lg mt-44 mb-10">
-                        <h2 className="text-2xl font-bold mb-4 text-center">F1 Quiz Time!</h2>
-                        {!showQuiz && (
-                            <div className="flex flex-col items-center">
-                                <input 
-                                    type="text" 
-                                    placeholder="Enter your game name" 
-                                    value={username} 
-                                    onChange={(e) => setUsername(e.target.value)} 
-                                    className="border border-gray-300 rounded p-2 mb-4 text-black"
-                                />
-                                <button onClick={startQuiz} className="bg-f1-red hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-                                    {quizCompleted ? "Play Again" : "Play"}
-                                </button>
-                            </div>
-                        )}
-                        {showQuiz && (
-                            <div className="text-center">
-                                <p className="mb-2">Question {currentQuestionIndex + 1} of {questions.length}</p>
-                                <p className="font-semibold mb-4">{questions[currentQuestionIndex].query}</p>
-                                <div className="flex flex-col items-center">
-                                    {questions[currentQuestionIndex].answers.map((answer, index) => (
-                                        <button 
-                                            key={answer} 
-                                            onClick={() => handleAnswerSelect(answer)}
-                                            className="bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 my-1 rounded w-full"
-                                        >
-                                            {['A', 'B', 'C', 'D'][index]}. {answer}
-                                        </button>
-                                    ))}
-                                </div>
-                            </div>
-                        )}
-                        {quizCompleted && (
-                            <div className="text-center mt-8">
-                                <p className="text-lg font-semibold">
-                                    Thank you for participating, {username}! You got {score}/10 points.
-                                </p>
-                            </div>
-                        )}
-                    </div>
-        
-                    {/* Leaderboard Section */}
-                    <div className="w-full max-w-xl mb-10">
-                        <h3 className="text-xl font-bold mb-4">Leaderboard</h3>
-                        <div className="bg-gray-800 p-4 rounded">
-                            {leaderboard.map((participant, index) => (
-                                <div key={index} className="flex justify-between border-b border-gray-700 py-2">
-                                    <span>{participant.username}</span>
-                                    <span style={{ color: participant.username === localStorage.getItem('quizUsername') ? '#f10606' : 'white' }}>
-                                        {participant.score}
-                                    </span>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
+    return (
+        <div className="bg-black text-white min-h-screen">
+            <Navbar />
+            <div className="container mx-auto p-4 flex flex-col items-center min-h-screen">
+                {!showQuiz && <QuizStart username={username} setUsername={setUsername} startQuiz={startQuiz} />}
+                {showQuiz && (
+                    <QuizQuestion 
+                        currentQuestion={questions[currentQuestionIndex]} 
+                        currentQuestionIndex={currentQuestionIndex} 
+                        handleAnswerSelect={handleAnswerSelect}
+                    />
+                )}
+                {quizCompleted && <QuizResult username={username} score={score} />}
+                <Leaderboard leaderboard={leaderboard} />
             </div>
-        );
-        
-    
+        </div>
+    );
 };
 
 export default QuizPage;

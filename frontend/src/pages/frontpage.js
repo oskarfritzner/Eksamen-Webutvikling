@@ -19,6 +19,7 @@ const Frontpage = () => {
                 </button>
                 </Link>
             </div>
+            
         </div>
     )
 }
