@@ -1,4 +1,3 @@
-// RacesPage.js
 import React, { useState, useEffect } from 'react';
 import Navbar from "../components/Navigation-Bar";
 import { getAllRaces } from '../services/raceServices';
@@ -59,8 +58,8 @@ const RacesPage = () => {
     return (
         <div>
             <Navbar bgColor="bg-white" linkColor="black" position="relative" />
-            <div className="p-4 flex mt-4 mx-4"> 
-                <div className="w-3/4 pr-4">
+            <div className="px-4 py-4 md:p-8 flex flex-col md:flex-row mt-4 md:mx-8"> 
+                <div className="md:w-3/4 md:pr-8">
                     <h2 className="text-2xl font-bold mb-4">Races</h2>
                     <div className="border-b border-gray-200">
                         {races.map(race => (
@@ -75,21 +74,21 @@ const RacesPage = () => {
                         ))}
                     </div>
                 </div>
-                <div className="w-1/4 ml-4 p-4 bg-white rounded-lg shadow">
-                    <h3 className="text-lg font-semibold mb-2">Race Details</h3>
-                    {selectedRace ? (
-                        <>
-                            <p><strong>Grand Prix:</strong> {selectedRace.grandPrix}</p>
-                            <p><strong>Winner:</strong> {selectedRace.winner}</p>
-                            <p><strong>Laps:</strong> {selectedRace.numberOfLaps}</p>
-                            <p><strong>Winner Time:</strong> {selectedRace.winnerTime}</p>
-                            <div className="mt-4">
-                                <h4 className="text-md font-semibold mb-2">Winner Details</h4>
-                                {getWinnerDetails()}
-                            </div>
-                        </>
-                    ) : <p>Select a race to view details.</p>}
-                </div>
+                <div className="mt-4 md:mt-0 md:w-1/4 ml-4 p-4 bg-white rounded-lg shadow md:ml-8">
+    <h3 className="text-lg font-semibold mb-2">Race Details</h3>
+    {selectedRace ? (
+        <>
+            <p><strong>Grand Prix:</strong> {selectedRace.grandPrix}</p>
+            <p><strong>Winner:</strong> {selectedRace.winner}</p>
+            <p><strong>Laps:</strong> {selectedRace.numberOfLaps}</p>
+            <p><strong>Winner Time:</strong> {selectedRace.winnerTime}</p>
+            <div className="mt-4">
+                <h4 className="text-md font-semibold mb-2">Winner Details</h4>
+                {getWinnerDetails()}
+            </div>
+        </>
+    ) : <p>Select a race to view details.</p>}
+</div>
             </div>
         </div>
     );

@@ -4,7 +4,7 @@ namespace backend.Models
     {
         public int Id { get; set; }
         public string Winner { get; set; }
-        public string WinnerTime { get; set; } // Changed to string
+        public string WinnerTime { get; set; }
         public string GrandPrix { get; set; }
         public int NumberOfLaps { get; set; }
     }
