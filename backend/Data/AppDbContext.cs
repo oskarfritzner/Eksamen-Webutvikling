@@ -27,8 +27,6 @@ namespace backend.Data
                 .HasConversion(
                     v => JsonSerializer.Serialize(v, (JsonSerializerOptions)null),
                     v => JsonSerializer.Deserialize<List<string>>(v, (JsonSerializerOptions)null));
-
-            
         }
     }
 }
