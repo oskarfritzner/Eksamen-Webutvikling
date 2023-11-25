@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Nl2wy9l/KoD/FdWV7KaUmEtIiPghn2i0gx4L7HFAAPU=",
+  "Hash": "+HTedmA4/8scKKsX6GyJ1u4g2Z2RKiAXzmMZA0rHW1E=",
   "Source": "backend",
   "BasePath": "_content/backend",
   "Mode": "Default",
@@ -236,6 +236,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/ferrari-f1-car3.jpeg"
+    },
+    {
+      "Identity": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/images/lewis-pb_20231114152133.jpeg",
+      "SourceId": "backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/",
+      "BasePath": "_content/backend",
+      "RelativePath": "images/lewis-pb_20231114152133.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/lewis-pb_20231114152133.jpeg"
+    },
+    {
+      "Identity": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/images/max-verstappen-pb_20231114152404.jpeg",
+      "SourceId": "backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/",
+      "BasePath": "_content/backend",
+      "RelativePath": "images/max-verstappen-pb_20231114152404.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/max-verstappen-pb_20231114152404.jpeg"
     },
     {
       "Identity": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/images/mclaren-f1-car2.jpeg",
