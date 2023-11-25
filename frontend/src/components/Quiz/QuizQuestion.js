@@ -2,7 +2,7 @@ import React from 'react';
 
 const QuizQuestion = ({ currentQuestion, currentQuestionIndex, handleAnswerSelect }) => {
     return (
-        <div className="text-center">
+        <div className="text-center mt-32">
             <p className="mb-2">Question {currentQuestionIndex + 1} of {currentQuestion.length}</p>
             <p className="font-semibold mb-4">{currentQuestion.query}</p>
             <div className="flex flex-col items-center">

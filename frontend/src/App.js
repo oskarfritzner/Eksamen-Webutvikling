@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Frontpage from './pages/FrontPage.js';
+import Frontpage from './pages/frontpage.js';
 import Quiz from './pages/QuizPage.js';
 import Races from './pages/RacesPage.js';
 import DriversPage from './pages/DriversPage.js';

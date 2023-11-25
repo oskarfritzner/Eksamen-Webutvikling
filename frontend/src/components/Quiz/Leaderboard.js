@@ -2,7 +2,7 @@ import React from 'react';
 
 const Leaderboard = ({ leaderboard }) => {
     return (
-        <div className="w-full max-w-xl mb-10">
+        <div className="w-full max-w-xl my-10">
             <h3 className="text-xl font-bold mb-4">Leaderboard</h3>
             <div className="bg-gray-800 p-4 rounded">
                 {leaderboard.map((participant, index) => (
