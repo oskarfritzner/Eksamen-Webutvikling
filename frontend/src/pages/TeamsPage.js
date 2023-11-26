@@ -2,41 +2,54 @@ import React, { useState, useEffect } from 'react';
 import Navbar from "../components/Navigation-Bar";
 import TeamSearch from "../components/Team/TeamSearch";
 import TeamList from "../components/Team/TeamList";
+import TeamDriverModal from '../components/Team/TeamDriverModal/TeamDriverModal';
 import { getAllTeams } from '../services/teamsServices';
+import { getAllDrivers } from '../services/driverServices';
 
-// TeamsPage component to display and search through teams.
 const TeamsPage = () => {
-    const [teams, setTeams] = useState([]); // State to store all teams.
-    const [filteredTeams, setFilteredTeams] = useState([]); // State to store teams after applying search filter.
-    const [searchTerm, setSearchTerm] = useState(''); // State to store search term.
+    const [teams, setTeams] = useState([]);
+    const [filteredTeams, setFilteredTeams] = useState([]);
+    const [searchTerm, setSearchTerm] = useState('');
+    const [drivers, setDrivers] = useState([]); // State for drivers
+    const [selectedDriver, setSelectedDriver] = useState(null); // State for the selected driver
 
-    // Fetch all teams on component mount.
     useEffect(() => {
         fetchTeams();
+        fetchDrivers();
     }, []);
 
-    // Function to fetch teams data.
     const fetchTeams = async () => {
         try {
             const data = await getAllTeams();
-            setTeams(data); // Store all teams data.
-            setFilteredTeams(data); // Initially display all teams.
+            setTeams(data);
+            setFilteredTeams(data);
         } catch (error) {
             console.error("Failed to fetch teams:", error);
         }
     };
 
+    const fetchDrivers = async () => {
+        try {
+            const data = await getAllDrivers();
+            setDrivers(data);
+        } catch (error) {
+            console.error("Error fetching drivers:", error);
+        }
+    };
 
-    // Function to handle search input changes.
     const handleSearchChange = (event) => {
         const searchValue = event.target.value;
-        setSearchTerm(searchValue); // Update search term state.
-
-        // Filter teams based on search term.
+        setSearchTerm(searchValue);
         const filtered = teams.filter(team =>
             team.manufacturer.toLowerCase().startsWith(searchValue.toLowerCase())
         );
-        setFilteredTeams(filtered); // Update filtered teams state.
+        setFilteredTeams(filtered);
+    };
+
+    const onDriverClick = (driverName) => {
+        console.log("Driver clicked:", driverName);
+        const foundDriver = drivers.find(driver => driver.name === driverName);
+        setSelectedDriver(foundDriver);
     };
 
     return (
@@ -44,8 +57,11 @@ const TeamsPage = () => {
             <Navbar bgColor="bg-white" linkColor="black" position="relative" />
             <div className="px-4 py-4 md:p-8 max-w-7xl mx-auto">
                 <TeamSearch searchTerm={searchTerm} onSearchChange={handleSearchChange} />
-                <TeamList teams={filteredTeams} />
+                <TeamList teams={filteredTeams} onDriverClick={onDriverClick} />
             </div>
+            {selectedDriver && (
+                <TeamDriverModal driver={selectedDriver} onClose={() => setSelectedDriver(null)} />
+            )}
         </div>
     );
 };
