@@ -4,15 +4,15 @@ import Navbar from '../components/Navigation-Bar';
 import { uploadImage } from '../services/imageServices';
 
 const RegisterDriver = () => {
-  // State to manage form data.
   const [formData, setFormData] = useState({
     name: '',
     age: '',
     nationality: '',
     driverImage: null,
   });
+  const [registrationSuccess, setRegistrationSuccess] = useState(false); // New state for tracking registration success
 
-  // Handles input changes and updates the state accordingly.
+  // Handles input changes and updates the state accordingly
   const handleChange = (e) => {
     const value = e.target.type === 'file' ? e.target.files[0] : e.target.value;
     setFormData({
@@ -21,7 +21,7 @@ const RegisterDriver = () => {
     });
   };
 
-  // Handles form submission.
+  // Handles form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
   
@@ -32,7 +32,7 @@ const RegisterDriver = () => {
       return;
     }
   
-    // Prepare driver data for submission.
+    // Prepare driver data for submission
     const driverData = {
       name: formData.name,
       age: parseInt(formData.age, 10), // Parse age to a number
@@ -41,10 +41,9 @@ const RegisterDriver = () => {
     };
   
     try {
-      // Send a POST request to create a new driver.
-      const response = await axios.post('https://localhost:7093/Drivers', driverData);
-  
-      console.log(response.data);
+      // Send a POST request to create a new driver
+      await axios.post('https://localhost:7093/Drivers', driverData);
+      setRegistrationSuccess(true); // Update the state to indicate successful registration
     } catch (error) {
       console.error(error);
     }
@@ -93,6 +92,11 @@ const RegisterDriver = () => {
               </button>
             </div>
           </form>
+          {registrationSuccess && ( // Conditionally render the success message
+            <div className="text-center text-green-500">
+              Driver successfully registered!
+            </div>
+          )}
         </div>
       </div>
     </>
