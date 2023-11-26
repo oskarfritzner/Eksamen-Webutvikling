@@ -1,4 +1,3 @@
-// driverService.js
 import axios from 'axios';
 
 const API_URL = 'https://localhost:7093/Drivers';
@@ -22,7 +21,7 @@ const updateDriver = async (driver) => {
         image: driver.image // Include the existing image URL
     };
 
-    console.log("Updating driver with data:", driverData); // For debugging
+    console.log("Updating driver with data:", driverData);
 
     try {
         const response = await axios.put(`${API_URL}/${driver.id}`, driverData, {

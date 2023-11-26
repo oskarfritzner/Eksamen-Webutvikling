@@ -1,4 +1,3 @@
-// racesServices.js
 import axios from 'axios';
 
 const API_URL = 'https://localhost:7093/Races';
@@ -13,5 +12,4 @@ const getAllRaces = async () => {
     }
 };
 
-// Export the function
 export { getAllRaces };

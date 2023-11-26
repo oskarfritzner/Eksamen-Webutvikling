@@ -1,20 +1,24 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navigation-Bar";
-import RaceList from "../components/Race/RaceList";  // Adjust the path as necessary
-import RaceDetails from "../components/Race/RaceDetails";  // Adjust the path as necessary
+import RaceList from "../components/Race/RaceList";
+import RaceDetails from "../components/Race/RaceDetails";
 import { getAllRaces } from "../services/raceServices";
 import { getAllDrivers } from "../services/driverServices";
 
+// The RacesPage component displays a list of races and their details.
 const RacesPage = () => {
+  // State to store races, drivers, and the selected race.
   const [races, setRaces] = useState([]);
   const [drivers, setDrivers] = useState([]);
   const [selectedRace, setSelectedRace] = useState(null);
 
+  // Fetch races and drivers data when the component mounts.
   useEffect(() => {
     fetchRaces();
     fetchDrivers();
   }, []);
 
+  // Fetches race data from the API and updates state.
   const fetchRaces = async () => {
     try {
       const data = await getAllRaces();
@@ -24,6 +28,7 @@ const RacesPage = () => {
     }
   };
 
+  // Fetches driver data from the API and updates state.
   const fetchDrivers = async () => {
     try {
       const data = await getAllDrivers();
@@ -33,6 +38,7 @@ const RacesPage = () => {
     }
   };
 
+  // Handles the selection of a race, updating the selectedRace state.
   const handleRaceSelect = (race) => {
     setSelectedRace(race);
   };

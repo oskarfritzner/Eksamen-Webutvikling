@@ -1,14 +1,20 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+/*
+  Navbar Component
+  Displays a navigation bar with links to different pages of the application.
+ */
+
 const Navbar = ({ bgColor = 'bg-transparent', linkColor = 'text-white', position = 'absolute' }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  // Toggle the state of the mobile menu
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Determine the mobile menu's background color based on the initial props
+  // Determine mobile menu's background and link color based on navbar's background color
   const mobileMenuBgColor = isMenuOpen ? (bgColor === 'bg-transparent' ? 'rgba(0, 0, 0, 0.8)' : 'rgba(255, 255, 255, 0.8)') : 'transparent';
   const mobileMenuLinkColor = isMenuOpen ? (bgColor === 'bg-transparent' ? 'text-white' : 'text-black') : linkColor;
 

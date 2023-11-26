@@ -5,7 +5,7 @@ import DriverCard from './DriverCard';
     Renders a grid of driver cards.
 
     Props:
-    - drivers: Array of driver objects which are to be displayed.
+    - drivers: Array of driver objects to display.
     - handleEditClick: Function to handle click event for editing a driver.
     - handleDeleteClick: Function to handle click event for deleting a driver.
     - editDriverId: ID of the driver currently being edited.

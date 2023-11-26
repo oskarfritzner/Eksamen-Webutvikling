@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from "../components/Navigation-Bar";
-import QuizStart from "../components/Quiz/QuizStart"; // Adjust the path as necessary
-import QuizQuestion from "../components/Quiz/QuizQuestion"; // Adjust the path as necessary
-import QuizResult from "../components/Quiz/QuizResult"; // Adjust the path as necessary
-import Leaderboard from "../components/Quiz/Leaderboard"; // Adjust the path as necessary
+import QuizStart from "../components/Quiz/QuizStart";
+import QuizQuestion from "../components/Quiz/QuizQuestion";
+import QuizResult from "../components/Quiz/QuizResult";
+import Leaderboard from "../components/Quiz/Leaderboard";
 import { getQuestions, submitQuizResult, getParticipants } from '../services/quizServices';
 
+// The QuizPage component handles the quiz functionality including starting the quiz, 
+// displaying questions, submitting answers, and showing results.
+
 const QuizPage = () => {
+    // State for quiz data, user responses, and UI control.
     const [questions, setQuestions] = useState([]);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [userAnswers, setUserAnswers] = useState({});
@@ -16,11 +20,13 @@ const QuizPage = () => {
     const [score, setScore] = useState(0);
     const [leaderboard, setLeaderboard] = useState([]);
 
+    // Fetch quiz questions and leaderboard data when component mounts.
     useEffect(() => {
         fetchQuestions();
         fetchParticipants();
     }, []);
 
+    // Fetches questions from the quiz API.
     const fetchQuestions = async () => {
         try {
             const fetchedQuestions = await getQuestions();
@@ -30,6 +36,7 @@ const QuizPage = () => {
         }
     };
 
+    // Fetches the leaderboard data from the API.
     const fetchParticipants = async () => {
         try {
             const participants = await getParticipants();
@@ -42,6 +49,7 @@ const QuizPage = () => {
         }
     };
 
+    // Starts the quiz and initializes necessary states.
     const startQuiz = () => {
         if (username) {
             localStorage.setItem('quizUsername', username);
@@ -54,6 +62,7 @@ const QuizPage = () => {
         }
     };
 
+    // Handles the logic when a user selects an answer.
     const handleAnswerSelect = async (answer) => {
         const question = questions[currentQuestionIndex];
         const isCorrect = answer === question.correctAnswer;
@@ -77,6 +86,7 @@ const QuizPage = () => {
         }
     };
 
+    // Calculates the user's score based on their answers and submits the result.
     const calculateScore = async (answers) => {
         const totalScore = Object.values(answers).reduce(
             (score, answer) => score + (answer.isCorrect ? 1 : 0),
@@ -86,7 +96,7 @@ const QuizPage = () => {
         await submitQuizResult(username, totalScore);
     };
 
-    // Reset quizCompleted when username changes
+    // Update state when username changes
     useEffect(() => {
         setQuizCompleted(false);
     }, [username]);
