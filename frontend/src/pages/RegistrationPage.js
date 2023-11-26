@@ -4,6 +4,7 @@ import Navbar from '../components/Navigation-Bar';
 import { uploadImage } from '../services/imageServices';
 
 const RegisterDriver = () => {
+  // State to manage form data.
   const [formData, setFormData] = useState({
     name: '',
     age: '',
@@ -11,6 +12,7 @@ const RegisterDriver = () => {
     driverImage: null,
   });
 
+  // Handles input changes and updates the state accordingly.
   const handleChange = (e) => {
     const value = e.target.type === 'file' ? e.target.files[0] : e.target.value;
     setFormData({
@@ -19,6 +21,7 @@ const RegisterDriver = () => {
     });
   };
 
+  // Handles form submission.
   const handleSubmit = async (e) => {
     e.preventDefault();
   
@@ -29,21 +32,21 @@ const RegisterDriver = () => {
       return;
     }
   
-    // Parse age to integer and correct the driverImage property to match the backend model
+    // Prepare driver data for submission.
     const driverData = {
       name: formData.name,
       age: parseInt(formData.age, 10), // Parse age to a number
       nationality: formData.nationality,
-      Image: driverImageUrl, // Correct the property name to match the backend model
+      Image: driverImageUrl, // Corrects the property name to match the backend model
     };
   
     try {
-      // Post the driver data to your driver creation endpoint
+      // Send a POST request to create a new driver.
       const response = await axios.post('https://localhost:7093/Drivers', driverData);
   
-      console.log(response.data); // Success
+      console.log(response.data);
     } catch (error) {
-      console.error(error); // Handle the error
+      console.error(error);
     }
   };
   

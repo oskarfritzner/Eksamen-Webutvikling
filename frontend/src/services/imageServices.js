@@ -1,4 +1,3 @@
-// services/imageService.js
 import axios from 'axios';
 
 const uploadImage = async (file) => {
@@ -10,8 +9,6 @@ const uploadImage = async (file) => {
     return response.data.url; // URL of the uploaded image
   } catch (error) {
     console.error(error);
-    // Handle the error accordingly
-    // Maybe return an error object or throw an exception, depending on your error handling strategy
   }
 };
 

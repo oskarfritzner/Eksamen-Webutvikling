@@ -1,4 +1,17 @@
-import React from 'react';
+/*
+    QuizStart Component
+    Renders the start screen for the quiz, including a field for the user to enter their name and a button to begin the quiz.
+
+    Props:
+    - username: The current value of the username input field.
+    - setUsername: Function to update the username state in the parent component.
+    - startQuiz: Function to trigger the start of the quiz.
+
+    This component displays an input field for the user to enter their game name (username)
+    and a button to start the quiz. When the user types in the input field, the setUsername 
+    function is called to update the state in the parent component. The startQuiz function 
+    is called when the user clicks the 'Play' button to begin the quiz.
+ */
 
 const QuizStart = ({ username, setUsername, startQuiz }) => {
     return (

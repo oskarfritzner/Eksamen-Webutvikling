@@ -1,4 +1,15 @@
-import React from 'react';
+/*
+    QuizResult Component
+    Displays the result of the quiz to the user.
+    
+    Props:
+    - username: The name of the user who took the quiz.
+    - score: The total score achieved by the user in the quiz.
+    
+    The component shows a thank you message to the user along with their
+    quiz score out of 10. It's a simple stateless component meant for 
+    display purposes only.
+ */
 
 const QuizResult = ({ username, score }) => {
     return (

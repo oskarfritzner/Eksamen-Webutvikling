@@ -1,4 +1,16 @@
-import React from 'react';
+/*
+  RaceList Component
+  Renders a list of all races with basic information and provides the functionality to select a race.
+    
+  Props:
+  races: Array of race objects to be displayed.
+  onRaceSelect: Function to handle the selection of a race.
+
+  This component creates a list showing basic information about each race, such as the name of the Grand Prix 
+  and the winner. Each race item in the list is clickable, allowing the user to select a race. When selected, 
+  the onRaceSelect function is triggered, to display more detailed information about the chosen race. 
+  The races are displayed in a list which is located differently based on screensize
+ */
 
 const RaceList = ({ races, onRaceSelect }) => {
   return (

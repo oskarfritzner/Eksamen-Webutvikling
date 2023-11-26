@@ -1,4 +1,12 @@
-import React from 'react';
+/*
+    Leaderboard Component
+    Displays the top participants in a leaderboard format.
+    
+    Props:
+    - leaderboard: Uses Data from the backend table participants and displays the top scores.
+
+    The components iterates over the participants, and shows the top scores. It also highlights the user score if they achieve a top 10 score. 
+ */
 
 const Leaderboard = ({ leaderboard }) => {
     return (

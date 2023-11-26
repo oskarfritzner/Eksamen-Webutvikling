@@ -1,4 +1,16 @@
-import React from 'react';
+/*
+     QuizQuestion Component
+    Renders a single quiz question with its multiple choice answers.
+    
+    Props:
+    - currentQuestion: The current question object being displayed.
+    - currentQuestionIndex: The index of the current question in the quiz.
+    - handleAnswerSelect: A function to handle the selection of an answer.
+    
+    The component displays the question and maps over its answers to create
+    interactive buttons for each. Clicking an answer button triggers the 
+    handleAnswerSelect function.
+ */
 
 const QuizQuestion = ({ currentQuestion, currentQuestionIndex, handleAnswerSelect }) => {
     return (

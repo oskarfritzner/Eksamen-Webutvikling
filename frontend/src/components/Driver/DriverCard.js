@@ -1,4 +1,18 @@
-import React from 'react';
+/*
+    DriverCard Component
+    Represents a single driver card displaying driver information.
+    It can switch between display and edit modes based on the `isEditing` prop.
+    
+    Props:
+    - driver: The driver data to be displayed.
+    - onEditClick: Function to handle the edit button click event.
+    - onDeleteClick: Function to handle the delete button click event.
+    - isEditing: Boolean indicating if the card is in edit mode.
+    - editFormData: Object containing data of the driver being edited.
+    - onEditFormChange: Function to handle changes in the edit form inputs.
+    - onConfirmClick: Function to handle the confirm button click event after editing.
+    - backendBaseUrl: Base URL for the backend server, used to construct image URL.
+*/
 
 const DriverCard = ({ driver, onEditClick, onDeleteClick, isEditing, editFormData, onEditFormChange, onConfirmClick, backendBaseUrl }) => {
     return (
