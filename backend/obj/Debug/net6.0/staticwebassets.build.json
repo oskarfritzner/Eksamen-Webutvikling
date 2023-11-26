@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "d2XiuJQcTkdIN1uhrhip98mOqoPCinMZqY7196VTFGE=",
+  "Hash": "VnFY+Kl9OQ/gAH4veYBhb9M0nkemLQT8fr+QV0cuLzw=",
   "Source": "backend",
   "BasePath": "_content/backend",
   "Mode": "Default",
@@ -170,6 +170,23 @@
       "OriginalItemSpec": "wwwroot/images/aston-martin-f1-car2.jpeg"
     },
     {
+      "Identity": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/images/cb-pb_20231126174636.jpeg",
+      "SourceId": "backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/",
+      "BasePath": "_content/backend",
+      "RelativePath": "images/cb-pb_20231126174636.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/cb-pb_20231126174636.jpeg"
+    },
+    {
       "Identity": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/images/cr7-pb_20231110193431.jpeg",
       "SourceId": "backend",
       "SourceType": "Discovered",
@@ -202,6 +219,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/cr7-pb_20231110194030.jpeg"
+    },
+    {
+      "Identity": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/images/drogba-pb_20231126153219.jpeg",
+      "SourceId": "backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/",
+      "BasePath": "_content/backend",
+      "RelativePath": "images/drogba-pb_20231126153219.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/drogba-pb_20231126153219.jpeg"
     },
     {
       "Identity": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/images/Ferrari-f1-car.webp",
