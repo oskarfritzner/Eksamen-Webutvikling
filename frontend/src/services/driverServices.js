@@ -16,9 +16,9 @@ const getAllDrivers = async () => {
 const updateDriver = async (driver) => {
     const driverData = {
         name: driver.name,
-        age: parseInt(driver.age, 10), // Ensure age is an integer
+        age: parseInt(driver.age, 10),
         nationality: driver.nationality,
-        image: driver.image // Include the existing image URL
+        image: driver.image
     };
 
     console.log("Updating driver with data:", driverData);

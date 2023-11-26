@@ -1,5 +1,8 @@
 using System.Collections.Generic;
 
+
+/* Question table */
+
 namespace backend.Models
 {
     public class Question

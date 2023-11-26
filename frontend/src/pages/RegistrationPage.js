@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import Navbar from '../components/Navigation-Bar';
+import Navbar from '../components/Navigation/Navigation-Bar';
+import Footer from '../components/Navigation/Footer';
 import { uploadImage } from '../services/imageServices';
 
 const RegisterDriver = () => {
@@ -51,7 +52,7 @@ const RegisterDriver = () => {
   
 
   return (
-    <>
+    <div>
       <Navbar bgColor="bg-white" linkColor="black" position='relative' />
 
       <div className='flex items-center justify-center h-screen'>
@@ -99,7 +100,7 @@ const RegisterDriver = () => {
           )}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

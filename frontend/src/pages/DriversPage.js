@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from "../components/Navigation-Bar";
+import Navbar from "../components/Navigation/Navigation-Bar";
 import DisplayDrivers from "../components/Driver/DisplayDrivers";
 import { getAllDrivers, updateDriver, deleteDriver } from '../services/driverServices';
+import Footer from '../components/Navigation/Footer';
 
 const DriversPage = () => {
     // State declarations

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Navbar from "../components/Navigation-Bar";
+import Navbar from "../components/Navigation/Navigation-Bar";
+import Footer from '../components/Navigation/Footer';
 
 const Frontpage = () => {
     // URL for the background image.
@@ -31,7 +32,6 @@ const Frontpage = () => {
                     </button>
                 </Link>
             </div>
-            
         </div>
     )
 }

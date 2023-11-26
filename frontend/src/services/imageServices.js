@@ -6,7 +6,7 @@ const uploadImage = async (file) => {
 
   try {
     const response = await axios.post('https://localhost:7093/UploadImage', formData);
-    return response.data.url; // URL of the uploaded image
+    return response.data.url; 
   } catch (error) {
     console.error(error);
   }

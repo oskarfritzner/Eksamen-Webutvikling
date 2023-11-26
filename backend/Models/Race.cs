@@ -1,3 +1,6 @@
+
+/* Race table */
+
 namespace backend.Models
 {
     public class Race

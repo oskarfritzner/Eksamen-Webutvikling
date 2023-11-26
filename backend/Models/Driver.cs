@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 
+/* Driver table */
+
 namespace backend.Models
 {
     public class Driver

@@ -1,3 +1,6 @@
+
+/* Participant table */
+
 namespace backend.Models
 {
     public class Participant

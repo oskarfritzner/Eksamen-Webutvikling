@@ -56,7 +56,6 @@ namespace backend.Controllers
             driver.Name = driverUpdate.Name;
             driver.Age = driverUpdate.Age;
             driver.Nationality = driverUpdate.Nationality;
-            // Do not update the image field
 
             try
             {
