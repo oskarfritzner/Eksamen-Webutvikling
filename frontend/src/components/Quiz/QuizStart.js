@@ -16,6 +16,7 @@
 const QuizStart = ({ username, setUsername, startQuiz }) => {
   return (
     <div className="flex flex-col items-center mt-48">
+      <h2 className="mb-10 text-4xl">Quiz-time!</h2>
       <input
         type="text"
         placeholder="Enter your game name"
