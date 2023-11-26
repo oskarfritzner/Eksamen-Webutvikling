@@ -37,7 +37,7 @@ const TeamsPage = () => {
     return (
         <div>
             <Navbar bgColor="bg-white" linkColor="black" position="relative" />
-            <div className="px-4 py-4 md:p-8">
+            <div className="px-4 py-4 md:p-8 max-w-7xl mx-auto">
                 <TeamSearch searchTerm={searchTerm} onSearchChange={handleSearchChange} />
                 <TeamList teams={filteredTeams} />
             </div>

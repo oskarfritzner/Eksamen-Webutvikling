@@ -52,7 +52,7 @@ const DriversPage = () => {
     return (
         <div>
             <Navbar bgColor="bg-white" linkColor="black" position="relative" />
-            <div className="px-4 py-4 md:p-8">
+            <div className="px-4 py-4 md:p-8 max-w-7xl mx-auto">
                 <h2 className="text-2xl font-bold mb-4">Drivers</h2>
                 <DisplayDrivers 
                     drivers={drivers} 

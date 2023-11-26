@@ -8,7 +8,7 @@ const RaceList = ({ races, onRaceSelect }) => {
         {races.map((race) => (
           <div
             key={race.id}
-            className="py-2 px-4 hover:bg-gray-100 cursor-pointer flex justify-between"
+            className="py-2 px-4 hover:bg-gray-100 cursor-pointer flex flex-col md:flex-row justify-between"
             onClick={() => onRaceSelect(race)}
           >
             <p>Grand Prix: {race.grandPrix}</p>

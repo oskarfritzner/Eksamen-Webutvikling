@@ -40,7 +40,7 @@ const RacesPage = () => {
   return (
     <div>
       <Navbar bgColor="bg-white" linkColor="black" position="relative" />
-      <div className="px-4 py-4 md:p-8 flex flex-col md:flex-row mt-4 md:mx-8">
+      <div className="px-4 py-4 md:p-8 flex flex-col md:flex-row mt-4 md:mx-8 max-w-7xl lg:mx-auto xs:flex-row">
         <RaceList races={races} onRaceSelect={handleRaceSelect} />
         <RaceDetails selectedRace={selectedRace} drivers={drivers} />
       </div>
