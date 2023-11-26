@@ -6,7 +6,6 @@ import {
   updateDriver,
   deleteDriver,
 } from "../services/driverServices";
-import Footer from "../components/Navigation/Footer";
 
 const DriversPage = () => {
   // State declarations

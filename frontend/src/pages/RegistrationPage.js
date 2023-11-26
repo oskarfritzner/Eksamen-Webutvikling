@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Navbar from "../components/Navigation/Navigation-Bar";
-import Footer from "../components/Navigation/Footer";
 import { uploadImage } from "../services/imageServices";
 
 const RegisterDriver = () => {

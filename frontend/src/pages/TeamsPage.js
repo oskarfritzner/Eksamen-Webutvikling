@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navigation/Navigation-Bar";
-import Footer from "../components/Navigation/Footer";
 import TeamSearch from "../components/Team/TeamSearch";
 import TeamList from "../components/Team/TeamList";
 import TeamDriverModal from "../components/Team/TeamDriverModal/TeamDriverModal";

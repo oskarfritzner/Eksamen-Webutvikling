@@ -1,4 +1,4 @@
-import "./TeamDriverModal.css"; // Import the CSS file
+import "./TeamDriverModal.css";
 
 const TeamDriverModal = ({ onClose, driver }) => {
   const backendBaseUrl = "https://localhost:7093";

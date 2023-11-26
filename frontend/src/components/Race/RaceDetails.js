@@ -37,7 +37,7 @@ const RaceDetails = ({ selectedRace, drivers }) => {
           </div>
         </div>
       ) : (
-        <p>No matching driver found.</p>
+        <p>No matching registered driver found.</p>
       );
     }
     return null;

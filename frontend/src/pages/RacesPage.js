@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navigation/Navigation-Bar";
-import Footer from "../components/Navigation/Footer";
 import RaceList from "../components/Race/RaceList";
 import RaceDetails from "../components/Race/RaceDetails";
 import { getAllRaces } from "../services/raceServices";

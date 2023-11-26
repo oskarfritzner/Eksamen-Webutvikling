@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navigation/Navigation-Bar";
-import Footer from "../components/Navigation/Footer";
 import QuizStart from "../components/Quiz/QuizStart";
 import QuizQuestion from "../components/Quiz/QuizQuestion";
 import QuizResult from "../components/Quiz/QuizResult";
