@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Hosting; // Required for IWebHostEnvironment
-using Microsoft.AspNetCore.Http; // Required for IFormFile
-using System.IO; // Required for Path and FileStream
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using System.IO;
 using System;
 
 namespace backend.Controllers
@@ -17,6 +17,7 @@ namespace backend.Controllers
             hosting = _hosting;
         }
 
+        // POST: api/uploadimage - Save an uploaded image
         [HttpPost]
         public IActionResult SaveImage(IFormFile file)
         {
@@ -48,10 +49,7 @@ namespace backend.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, $"Internal server error: {ex}");
             }
 
-            // Assuming you're hosting the site at the root, the URL will be relative from the wwwroot.
-            // You might need to adjust the URL depending on your hosting configuration.
             string url = $"/images/{fileName}";
-
             return Ok(new { url });
         }
     }

@@ -18,14 +18,14 @@ namespace backend.Controllers
             _context = context;
         }
 
-        // GET: api/questions
+        // Retrieves all questions
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Question>>> GetQuestions()
         {
             return await _context.Questions.ToListAsync();
         }
 
-        // GET: api/questions/5
+        // Retrieves a specific question by ID
         [HttpGet("{id}")]
         public async Task<ActionResult<Question>> GetQuestion(int id)
         {
@@ -37,17 +37,16 @@ namespace backend.Controllers
             return question;
         }
 
-        // POST: api/questions
+        // Adds a new question
         [HttpPost]
         public async Task<ActionResult<Question>> PostQuestion(Question question)
         {
             _context.Questions.Add(question);
             await _context.SaveChangesAsync();
-
             return CreatedAtAction(nameof(GetQuestion), new { id = question.Id }, question);
         }
 
-        // PUT: api/questions/5
+        // Updates an existing question
         [HttpPut("{id}")]
         public async Task<IActionResult> PutQuestion(int id, Question question)
         {
@@ -55,7 +54,6 @@ namespace backend.Controllers
             {
                 return BadRequest();
             }
-
             _context.Entry(question).State = EntityState.Modified;
             try
             {
@@ -75,7 +73,7 @@ namespace backend.Controllers
             return NoContent();
         }
 
-        // DELETE: api/questions/5
+        // Deletes a question
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteQuestion(int id)
         {
@@ -86,7 +84,6 @@ namespace backend.Controllers
             }
             _context.Questions.Remove(question);
             await _context.SaveChangesAsync();
-
             return NoContent();
         }
     }

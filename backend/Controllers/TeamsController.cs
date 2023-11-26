@@ -18,45 +18,35 @@ namespace backend.Controllers
             _context = context;
         }
 
-        // GET: api/teams
-        // Retrieves all teams.
+        // Retrieves all teams
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Team>>> GetTeams()
         {
             return await _context.Teams.ToListAsync();
         }
 
-        // GET: api/teams/5
-        // Retrieves a single team by ID.
+        // Retrieves a single team by ID
         [HttpGet("{id}")]
         public async Task<ActionResult<Team>> GetTeam(int id)
         {
             var team = await _context.Teams.FindAsync(id);
-
             if (team == null)
             {
                 return NotFound();
             }
-
             return team;
         }
 
-        // POST: api/teams
-        // This action method responds to HTTP POST requests to add a new team.
+        // Adds a new team
         [HttpPost]
         public async Task<ActionResult<Team>> PostTeam([FromBody] Team team)
         {
-            // Adds the new team to the context.
             _context.Teams.Add(team);
-            // Asynchronously saves the changes to the database.
             await _context.SaveChangesAsync();
-
-            // Returns a HTTP 201 Created response with the location header set to the URI of the new team.
             return CreatedAtAction(nameof(GetTeam), new { id = team.Id }, team);
         }
 
-        // PUT: api/teams/5
-        // Updates an existing team.
+        // Updates an existing team
         [HttpPut("{id}")]
         public async Task<IActionResult> PutTeam(int id, Team team)
         {
@@ -64,9 +54,7 @@ namespace backend.Controllers
             {
                 return BadRequest();
             }
-
             _context.Entry(team).State = EntityState.Modified;
-
             try
             {
                 await _context.SaveChangesAsync();
@@ -82,12 +70,10 @@ namespace backend.Controllers
                     throw;
                 }
             }
-
-            return NoContent(); // Return a 204 No Content response.
+            return NoContent();
         }
 
-        // DELETE: api/teams/5
-        // Deletes a team by ID.
+        // Deletes a team
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTeam(int id)
         {
@@ -96,14 +82,12 @@ namespace backend.Controllers
             {
                 return NotFound();
             }
-
             _context.Teams.Remove(team);
             await _context.SaveChangesAsync();
-
-            return NoContent(); // Return a 204 No Content response.
+            return NoContent();
         }
 
-        // Checks if a team exists.
+        // Helper method to check if a team exists
         private bool TeamExists(int id)
         {
             return _context.Teams.Any(e => e.Id == id);

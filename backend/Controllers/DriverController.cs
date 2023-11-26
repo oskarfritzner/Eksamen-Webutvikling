@@ -19,12 +19,14 @@ namespace backend.Controllers
             _context = context;
         }
 
+        // GET: api/drivers - Get all drivers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Driver>>> GetDrivers()
         {
             return await _context.Drivers.ToListAsync();
         }
 
+        // GET: api/drivers/{id} - Get a specific driver by ID
         [HttpGet("{id}")]
         public async Task<ActionResult<Driver>> GetDriver(int id)
         {
@@ -36,6 +38,7 @@ namespace backend.Controllers
             return driver;
         }
 
+        // POST: api/drivers - Add a new driver
         [HttpPost]
         public async Task<ActionResult<Driver>> PostDriver(Driver driver)
         {
@@ -44,19 +47,16 @@ namespace backend.Controllers
             return CreatedAtAction(nameof(GetDriver), new { id = driver.Id }, driver);
         }
 
+        // PUT: api/drivers/{id} - Update a driver
         [HttpPut("{id}")]
         public async Task<IActionResult> PutDriver(int id, [FromBody] Driver driverUpdate)
         {
-            var driver = await _context.Drivers.FindAsync(id);
-            if (driver == null)
+            if (id != driverUpdate.Id)
             {
-                return NotFound();
+                return BadRequest();
             }
 
-            driver.Name = driverUpdate.Name;
-            driver.Age = driverUpdate.Age;
-            driver.Nationality = driverUpdate.Nationality;
-
+            _context.Entry(driverUpdate).State = EntityState.Modified;
             try
             {
                 await _context.SaveChangesAsync();
@@ -75,6 +75,7 @@ namespace backend.Controllers
             return NoContent();
         }
 
+        // DELETE: api/drivers/{id} - Delete a driver
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteDriver(int id)
         {
@@ -88,6 +89,7 @@ namespace backend.Controllers
             return NoContent();
         }
 
+        // Check if a Driver exists
         private bool DriverExists(int id)
         {
             return _context.Drivers.Any(e => e.Id == id);

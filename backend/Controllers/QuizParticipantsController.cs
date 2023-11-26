@@ -18,24 +18,19 @@ namespace backend.Controllers
             _context = context;
         }
 
-        // GET: api/participants
-        // Retrieves all participants. Useful for administrative purposes.
+        // Retrieves all participants
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Participant>>> GetParticipants()
         {
             return await _context.Participants.ToListAsync();
         }
 
-        // POST: api/participants
-        // Adds a new participant's quiz results to the database.
+        // Adds a new participant
         [HttpPost]
         public async Task<ActionResult<Participant>> PostParticipant([FromBody] Participant participant)
         {
             _context.Participants.Add(participant);
             await _context.SaveChangesAsync();
-
-            // Return the participant data without a location header.
-            // This simplifies the response and avoids the need for a separate GET method.
             return Ok(participant);
         }
     }

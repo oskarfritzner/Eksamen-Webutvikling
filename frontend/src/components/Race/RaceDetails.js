@@ -14,7 +14,6 @@
  */
 
 const RaceDetails = ({ selectedRace, drivers }) => {
-
   // Function to find and display details of the race winner.
   const getWinnerDetails = () => {
     if (selectedRace) {
@@ -29,8 +28,12 @@ const RaceDetails = ({ selectedRace, drivers }) => {
             className="w-20 h-20 object-cover rounded-full"
           />
           <div className="ml-4">
-            <p><strong>Name:</strong> {winner.name}</p>
-            <p><strong>Nationality:</strong> {winner.nationality}</p>
+            <p>
+              <strong>Name:</strong> {winner.name}
+            </p>
+            <p>
+              <strong>Nationality:</strong> {winner.nationality}
+            </p>
           </div>
         </div>
       ) : (
@@ -47,10 +50,18 @@ const RaceDetails = ({ selectedRace, drivers }) => {
       <h3 className="text-lg font-semibold mb-2">Race Details</h3>
       {selectedRace ? (
         <>
-          <p><strong>Grand Prix:</strong> {selectedRace.grandPrix}</p>
-          <p><strong>Winner:</strong> {selectedRace.winner}</p>
-          <p><strong>Laps:</strong> {selectedRace.numberOfLaps}</p>
-          <p><strong>Winner Time:</strong> {selectedRace.winnerTime}</p>
+          <p>
+            <strong>Grand Prix:</strong> {selectedRace.grandPrix}
+          </p>
+          <p>
+            <strong>Winner:</strong> {selectedRace.winner}
+          </p>
+          <p>
+            <strong>Laps:</strong> {selectedRace.numberOfLaps}
+          </p>
+          <p>
+            <strong>Winner Time:</strong> {selectedRace.winnerTime}
+          </p>
           <div className="mt-4">
             <h4 className="text-md font-semibold mb-2">Winner Details</h4>
             {getWinnerDetails()}

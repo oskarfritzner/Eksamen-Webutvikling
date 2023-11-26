@@ -13,47 +13,48 @@
 */
 
 const TeamList = ({ teams, onDriverClick }) => {
-    const backendBaseUrl = "https://localhost:7093";
-  
-    return (
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {teams.map((team) => (
-          <div key={team.id} className="bg-white rounded-lg shadow p-5 hover:shadow-md transition-shadow duration-200">
-            <img
-              src={`${backendBaseUrl}${team.image}`}
-              alt={team.manufacturer}
-              className="w-full h-48 object-cover rounded-lg mb-4"
-            />
-            <div>
-              <h3 className="text-lg font-semibold mb-2">{team.manufacturer}</h3>
-              <p className="text-sm text-gray-500 mb-1">Team Number: {team.id}</p>
-              <div className="text-sm text-blue-500">
-                {team.driver1 || team.driver2 ? 'Drivers: ' : ''}
-                {team.driver1 && (
-                  <button
-                    onClick={() => onDriverClick(team.driver1)}
-                    className="hover:text-blue-700"
-                  >
-                    {team.driver1}
-                  </button>
-                )}
-                {team.driver1 && team.driver2 && ', '}
-                {team.driver2 && (
-                  <button
-                    onClick={() => onDriverClick(team.driver2)}
-                    className="hover:text-blue-700"
-                  >
-                    {team.driver2}
-                  </button>
-                )}
-              </div>
+  const backendBaseUrl = "https://localhost:7093";
+
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {teams.map((team) => (
+        <div
+          key={team.id}
+          className="bg-white rounded-lg shadow p-5 hover:shadow-md transition-shadow duration-200"
+        >
+          <img
+            src={`${backendBaseUrl}${team.image}`}
+            alt={team.manufacturer}
+            className="w-full h-48 object-cover rounded-lg mb-4"
+          />
+          <div>
+            <h3 className="text-lg font-semibold mb-2">{team.manufacturer}</h3>
+            <p className="text-sm text-gray-500 mb-1">Team Number: {team.id}</p>
+            <div className="text-sm text-blue-500">
+              {team.driver1 || team.driver2 ? "Drivers: " : ""}
+              {team.driver1 && (
+                <button
+                  onClick={() => onDriverClick(team.driver1)}
+                  className="hover:text-blue-700"
+                >
+                  {team.driver1}
+                </button>
+              )}
+              {team.driver1 && team.driver2 && ", "}
+              {team.driver2 && (
+                <button
+                  onClick={() => onDriverClick(team.driver2)}
+                  className="hover:text-blue-700"
+                >
+                  {team.driver2}
+                </button>
+              )}
             </div>
           </div>
-        ))}
-      </div>
-    );
-  };
-  
-  export default TeamList;
-  
-  
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default TeamList;

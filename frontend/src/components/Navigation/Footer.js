@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'; // Assuming you are using React Router
+import { Link } from "react-router-dom"; // Assuming you are using React Router
 
 const Footer = () => {
   return (
