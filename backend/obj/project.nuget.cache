@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/pN1wefSwQZ3TNJvZRby4eGfWN9mdLxJ4j8M5rD2IvUTqYyAbNrmsa3Q/j1S3T+OnIROsW6sxaTRPQowM6crgg==",
+  "dgSpecHash": "SVB8l08Y3gM0hh2agyK9s+jpkQIgB3GOHB5pOQjARql9U/fzpzPJzkFc1+wunIWKjWD71pHCEw+ombpQo9YpMQ==",
   "success": true,
-  "projectFilePath": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/backend.csproj",
+  "projectFilePath": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/backend.csproj",
   "expectedPackageFiles": [
     "/Users/oskarfritzner/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/oskarfritzner/.nuget/packages/microsoft.data.sqlite.core/7.0.13/microsoft.data.sqlite.core.7.0.13.nupkg.sha512",

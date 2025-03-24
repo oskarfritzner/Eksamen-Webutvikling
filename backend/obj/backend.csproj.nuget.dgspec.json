@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/backend.csproj": {}
+    "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/backend.csproj": {}
   },
   "projects": {
-    "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/backend.csproj": {
+    "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/backend.csproj",
+        "projectUniqueName": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/backend.csproj",
         "projectName": "backend",
-        "projectPath": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/backend.csproj",
+        "projectPath": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/backend.csproj",
         "packagesPath": "/Users/oskarfritzner/.nuget/packages/",
-        "outputPath": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/obj/",
+        "outputPath": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/oskarfritzner/.nuget/NuGet/NuGet.Config"

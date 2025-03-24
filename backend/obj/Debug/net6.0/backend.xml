@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>backend</name>
+    </assembly>
+    <members>
+        <member name="T:backend.Controllers.DriversController">
+            <summary>
+            Controller for managing F1 drivers in the system
+            </summary>
+        </member>
+        <member name="M:backend.Controllers.DriversController.#ctor(backend.Data.AppDbContext)">
+            <summary>
+            Initializes a new instance of the DriversController
+            </summary>
+            <param name="context">The database context</param>
+        </member>
+        <member name="M:backend.Controllers.DriversController.GetDrivers">
+            <summary>
+            Gets all F1 drivers
+            </summary>
+            <returns>A list of all F1 drivers</returns>
+            <response code="200">Returns the list of drivers</response>
+        </member>
+        <member name="M:backend.Controllers.DriversController.GetDriver(System.Int32)">
+            <summary>
+            Gets a specific F1 driver by their ID
+            </summary>
+            <param name="id">The ID of the driver to retrieve</param>
+            <returns>The requested driver</returns>
+            <response code="200">Returns the requested driver</response>
+            <response code="404">If the driver is not found</response>
+        </member>
+        <member name="M:backend.Controllers.DriversController.PostDriver(backend.Models.Driver)">
+            <summary>
+            Creates a new F1 driver
+            </summary>
+            <param name="driver">The driver information to create</param>
+            <returns>The created driver</returns>
+            <response code="201">Returns the newly created driver</response>
+            <response code="400">If the driver data is invalid</response>
+        </member>
+        <member name="M:backend.Controllers.DriversController.PutDriver(System.Int32,backend.Models.Driver)">
+            <summary>
+            Updates an existing F1 driver
+            </summary>
+            <param name="id">The ID of the driver to update</param>
+            <param name="driverUpdate">The updated driver information</param>
+            <returns>No content if successful</returns>
+            <response code="204">If the driver was successfully updated</response>
+            <response code="400">If the ID in the URL doesn't match the body</response>
+            <response code="404">If the driver is not found</response>
+        </member>
+        <member name="M:backend.Controllers.DriversController.DeleteDriver(System.Int32)">
+            <summary>
+            Deletes a specific F1 driver
+            </summary>
+            <param name="id">The ID of the driver to delete</param>
+            <returns>No content if successful</returns>
+            <response code="204">If the driver was successfully deleted</response>
+            <response code="404">If the driver is not found</response>
+        </member>
+        <member name="T:backend.Migrations.firstCreation">
+            <inheritdoc />
+        </member>
+        <member name="M:backend.Migrations.firstCreation.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:backend.Migrations.firstCreation.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:backend.Migrations.firstCreation.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:backend.Migrations.UpdatedRaceModel">
+            <inheritdoc />
+        </member>
+        <member name="M:backend.Migrations.UpdatedRaceModel.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:backend.Migrations.UpdatedRaceModel.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:backend.Migrations.UpdatedRaceModel.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:backend.Migrations.AddQuizModels">
+            <inheritdoc />
+        </member>
+        <member name="M:backend.Migrations.AddQuizModels.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:backend.Migrations.AddQuizModels.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:backend.Migrations.AddQuizModels.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:backend.Migrations.UpdateTeamModel">
+            <inheritdoc />
+        </member>
+        <member name="M:backend.Migrations.UpdateTeamModel.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:backend.Migrations.UpdateTeamModel.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:backend.Migrations.UpdateTeamModel.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:backend.Models.Driver">
+            <summary>
+            Represents a Formula 1 driver in the system
+            </summary>
+        </member>
+        <member name="P:backend.Models.Driver.Id">
+            <summary>
+            The unique identifier for the driver
+            </summary>
+        </member>
+        <member name="P:backend.Models.Driver.Name">
+            <summary>
+            The full name of the driver
+            </summary>
+            <example>Max Verstappen</example>
+        </member>
+        <member name="P:backend.Models.Driver.Age">
+            <summary>
+            The age of the driver
+            </summary>
+            <example>26</example>
+        </member>
+        <member name="P:backend.Models.Driver.Nationality">
+            <summary>
+            The nationality of the driver
+            </summary>
+            <example>Dutch</example>
+        </member>
+        <member name="P:backend.Models.Driver.Image">
+            <summary>
+            The URL to the driver's profile image
+            </summary>
+            <example>/images/drivers/max-verstappen.jpg</example>
+        </member>
+        <member name="M:backend.Models.Driver.#ctor">
+            <summary>
+            Creates a new instance of the Driver class with default values
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "JRdzsDkHFtwuVe7yavhwbGleWrz0RF84c52m4DHuXVw=",
+  "Hash": "ojIBHzmiEOoG9E2NP+S0ZVI9AXhnCBkit8UuJa9LAd8=",
   "Source": "backend",
   "BasePath": "_content/backend",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "backend/wwwroot",
       "Source": "backend",
-      "ContentRoot": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/",
+      "ContentRoot": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/",
       "BasePath": "_content/backend",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/.DS_Store",
+      "Identity": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/.DS_Store",
       "SourceId": "backend",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/",
+      "ContentRoot": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/",
       "BasePath": "_content/backend",
       "RelativePath": ".DS_Store",
       "AssetKind": "All",
@@ -34,10 +34,10 @@
       "OriginalItemSpec": "wwwroot/.DS_Store"
     },
     {
-      "Identity": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/files/api-instructions.html",
+      "Identity": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/files/api-instructions.html",
       "SourceId": "backend",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/",
+      "ContentRoot": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/",
       "BasePath": "_content/backend",
       "RelativePath": "files/api-instructions.html",
       "AssetKind": "All",
@@ -51,10 +51,10 @@
       "OriginalItemSpec": "wwwroot/files/api-instructions.html"
     },
     {
-      "Identity": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/images/.DS_Store",
+      "Identity": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/images/.DS_Store",
       "SourceId": "backend",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/",
+      "ContentRoot": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/",
       "BasePath": "_content/backend",
       "RelativePath": "images/.DS_Store",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot/images/.DS_Store"
     },
     {
-      "Identity": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/images/aston-martin-f1-car.avif",
+      "Identity": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/images/aston-martin-f1-car.avif",
       "SourceId": "backend",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/",
+      "ContentRoot": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/",
       "BasePath": "_content/backend",
       "RelativePath": "images/aston-martin-f1-car.avif",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot/images/aston-martin-f1-car.avif"
     },
     {
-      "Identity": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/images/aston-martin-f1-car2.jpeg",
+      "Identity": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/images/aston-martin-f1-car2.jpeg",
       "SourceId": "backend",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/",
+      "ContentRoot": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/",
       "BasePath": "_content/backend",
       "RelativePath": "images/aston-martin-f1-car2.jpeg",
       "AssetKind": "All",
@@ -102,10 +102,10 @@
       "OriginalItemSpec": "wwwroot/images/aston-martin-f1-car2.jpeg"
     },
     {
-      "Identity": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/images/cb-pb_20231126174636.jpeg",
+      "Identity": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/images/cb-pb_20231126174636.jpeg",
       "SourceId": "backend",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/",
+      "ContentRoot": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/",
       "BasePath": "_content/backend",
       "RelativePath": "images/cb-pb_20231126174636.jpeg",
       "AssetKind": "All",
@@ -119,10 +119,10 @@
       "OriginalItemSpec": "wwwroot/images/cb-pb_20231126174636.jpeg"
     },
     {
-      "Identity": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/images/cr7-pb_20231110193431.jpeg",
+      "Identity": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/images/cr7-pb_20231110193431.jpeg",
       "SourceId": "backend",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/",
+      "ContentRoot": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/",
       "BasePath": "_content/backend",
       "RelativePath": "images/cr7-pb_20231110193431.jpeg",
       "AssetKind": "All",
@@ -136,10 +136,10 @@
       "OriginalItemSpec": "wwwroot/images/cr7-pb_20231110193431.jpeg"
     },
     {
-      "Identity": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/images/cr7-pb_20231110194030.jpeg",
+      "Identity": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/images/cr7-pb_20231110194030.jpeg",
       "SourceId": "backend",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/",
+      "ContentRoot": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/",
       "BasePath": "_content/backend",
       "RelativePath": "images/cr7-pb_20231110194030.jpeg",
       "AssetKind": "All",
@@ -153,10 +153,10 @@
       "OriginalItemSpec": "wwwroot/images/cr7-pb_20231110194030.jpeg"
     },
     {
-      "Identity": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/images/drogba-pb_20231126153219.jpeg",
+      "Identity": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/images/drogba-pb_20231126153219.jpeg",
       "SourceId": "backend",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/",
+      "ContentRoot": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/",
       "BasePath": "_content/backend",
       "RelativePath": "images/drogba-pb_20231126153219.jpeg",
       "AssetKind": "All",
@@ -170,10 +170,10 @@
       "OriginalItemSpec": "wwwroot/images/drogba-pb_20231126153219.jpeg"
     },
     {
-      "Identity": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/images/Ferrari-f1-car.webp",
+      "Identity": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/images/Ferrari-f1-car.webp",
       "SourceId": "backend",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/",
+      "ContentRoot": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/",
       "BasePath": "_content/backend",
       "RelativePath": "images/Ferrari-f1-car.webp",
       "AssetKind": "All",
@@ -187,10 +187,10 @@
       "OriginalItemSpec": "wwwroot/images/Ferrari-f1-car.webp"
     },
     {
-      "Identity": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/images/ferrari-f1-car3.jpeg",
+      "Identity": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/images/ferrari-f1-car3.jpeg",
       "SourceId": "backend",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/",
+      "ContentRoot": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/",
       "BasePath": "_content/backend",
       "RelativePath": "images/ferrari-f1-car3.jpeg",
       "AssetKind": "All",
@@ -204,10 +204,27 @@
       "OriginalItemSpec": "wwwroot/images/ferrari-f1-car3.jpeg"
     },
     {
-      "Identity": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/images/lewis-pb_20231114152133.jpeg",
+      "Identity": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/images/IMG_2240_20250324110348.png",
       "SourceId": "backend",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/",
+      "ContentRoot": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/",
+      "BasePath": "_content/backend",
+      "RelativePath": "images/IMG_2240_20250324110348.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/IMG_2240_20250324110348.png"
+    },
+    {
+      "Identity": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/images/lewis-pb_20231114152133.jpeg",
+      "SourceId": "backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/",
       "BasePath": "_content/backend",
       "RelativePath": "images/lewis-pb_20231114152133.jpeg",
       "AssetKind": "All",
@@ -221,10 +238,10 @@
       "OriginalItemSpec": "wwwroot/images/lewis-pb_20231114152133.jpeg"
     },
     {
-      "Identity": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/images/max-verstappen-pb_20231114152404.jpeg",
+      "Identity": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/images/max-verstappen-pb_20231114152404.jpeg",
       "SourceId": "backend",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/",
+      "ContentRoot": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/",
       "BasePath": "_content/backend",
       "RelativePath": "images/max-verstappen-pb_20231114152404.jpeg",
       "AssetKind": "All",
@@ -238,10 +255,10 @@
       "OriginalItemSpec": "wwwroot/images/max-verstappen-pb_20231114152404.jpeg"
     },
     {
-      "Identity": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/images/mclaren-f1-car2.jpeg",
+      "Identity": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/images/mclaren-f1-car2.jpeg",
       "SourceId": "backend",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/",
+      "ContentRoot": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/",
       "BasePath": "_content/backend",
       "RelativePath": "images/mclaren-f1-car2.jpeg",
       "AssetKind": "All",
@@ -255,10 +272,10 @@
       "OriginalItemSpec": "wwwroot/images/mclaren-f1-car2.jpeg"
     },
     {
-      "Identity": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/images/Mclarens-f1-car.avif",
+      "Identity": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/images/Mclarens-f1-car.avif",
       "SourceId": "backend",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/",
+      "ContentRoot": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/",
       "BasePath": "_content/backend",
       "RelativePath": "images/Mclarens-f1-car.avif",
       "AssetKind": "All",
@@ -272,10 +289,10 @@
       "OriginalItemSpec": "wwwroot/images/Mclarens-f1-car.avif"
     },
     {
-      "Identity": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/images/mercedes-f1-car.jpeg",
+      "Identity": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/images/mercedes-f1-car.jpeg",
       "SourceId": "backend",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/",
+      "ContentRoot": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/",
       "BasePath": "_content/backend",
       "RelativePath": "images/mercedes-f1-car.jpeg",
       "AssetKind": "All",
@@ -289,10 +306,10 @@
       "OriginalItemSpec": "wwwroot/images/mercedes-f1-car.jpeg"
     },
     {
-      "Identity": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/images/messi-pb_20231110194013.webp",
+      "Identity": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/images/messi-pb_20231110194013.webp",
       "SourceId": "backend",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/",
+      "ContentRoot": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/",
       "BasePath": "_content/backend",
       "RelativePath": "images/messi-pb_20231110194013.webp",
       "AssetKind": "All",
@@ -306,10 +323,10 @@
       "OriginalItemSpec": "wwwroot/images/messi-pb_20231110194013.webp"
     },
     {
-      "Identity": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/images/redbul-f1-car.avif",
+      "Identity": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/images/redbul-f1-car.avif",
       "SourceId": "backend",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/",
+      "ContentRoot": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/",
       "BasePath": "_content/backend",
       "RelativePath": "images/redbul-f1-car.avif",
       "AssetKind": "All",
@@ -323,10 +340,10 @@
       "OriginalItemSpec": "wwwroot/images/redbul-f1-car.avif"
     },
     {
-      "Identity": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/images/redbull-f1-car2.jpeg",
+      "Identity": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/images/redbull-f1-car2.jpeg",
       "SourceId": "backend",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/",
+      "ContentRoot": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/",
       "BasePath": "_content/backend",
       "RelativePath": "images/redbull-f1-car2.jpeg",
       "AssetKind": "All",
@@ -340,10 +357,10 @@
       "OriginalItemSpec": "wwwroot/images/redbull-f1-car2.jpeg"
     },
     {
-      "Identity": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/images/trump-pb_20231110194059.jpeg",
+      "Identity": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/images/trump-pb_20231110194059.jpeg",
       "SourceId": "backend",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/",
+      "ContentRoot": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/",
       "BasePath": "_content/backend",
       "RelativePath": "images/trump-pb_20231110194059.jpeg",
       "AssetKind": "All",
@@ -357,10 +374,10 @@
       "OriginalItemSpec": "wwwroot/images/trump-pb_20231110194059.jpeg"
     },
     {
-      "Identity": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/images/verstappen-pb_20231114151053.jpeg",
+      "Identity": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/images/verstappen-pb_20231114151053.jpeg",
       "SourceId": "backend",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/",
+      "ContentRoot": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/",
       "BasePath": "_content/backend",
       "RelativePath": "images/verstappen-pb_20231114151053.jpeg",
       "AssetKind": "All",
@@ -374,10 +391,10 @@
       "OriginalItemSpec": "wwwroot/images/verstappen-pb_20231114151053.jpeg"
     },
     {
-      "Identity": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/images/verstappen-pb.jpeg",
+      "Identity": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/images/verstappen-pb.jpeg",
       "SourceId": "backend",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/",
+      "ContentRoot": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/",
       "BasePath": "_content/backend",
       "RelativePath": "images/verstappen-pb.jpeg",
       "AssetKind": "All",
@@ -391,10 +408,10 @@
       "OriginalItemSpec": "wwwroot/images/verstappen-pb.jpeg"
     },
     {
-      "Identity": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/images/verstappen-pb.webp",
+      "Identity": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/images/verstappen-pb.webp",
       "SourceId": "backend",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/oskarfritzner/Documents/Frontend og Mobil-utvikling/Semester 3/Webutvikling/eksamen-webutvikling/backend/wwwroot/",
+      "ContentRoot": "/Users/oskarfritzner/Desktop/FullstackApp-f1/Eksamen-Webutvikling/backend/wwwroot/",
       "BasePath": "_content/backend",
       "RelativePath": "images/verstappen-pb.webp",
       "AssetKind": "All",
