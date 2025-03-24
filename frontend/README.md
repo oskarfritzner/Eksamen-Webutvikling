@@ -1,51 +1,65 @@
 # F1 Stats Frontend
 
-## 🎨 Frontend Overview
+## �� Frontend Overview
 
-The frontend of the F1 Stats application is built with React 18 and modern web technologies, providing an intuitive and responsive user interface for exploring Formula 1 data and statistics.
+The frontend of the F1 Stats application is built with React and styled with Tailwind CSS. It provides an interface for viewing and interacting with Formula 1 statistics and data.
 
 ## 💻 Technology Stack
 
-- **React 18.2.0**: Modern UI library for building user interfaces
-- **TypeScript**: For type-safe code and better developer experience
-- **Tailwind CSS**: Utility-first CSS framework for styling
-- **React Router DOM**: Client-side routing
-- **Axios**: HTTP client for API requests
-- **Jest & React Testing Library**: Testing framework
+- **React 18**: UI library
+- **React Router**: Navigation
+- **Tailwind CSS**: Styling
+- **Axios**: API communication
 
-## 🏗️ Project Structure
+## 📁 Project Structure
 
 ```
 frontend/
 ├── src/
-│   ├── components/    # Reusable UI components
-│   ├── contexts/      # React context providers
+│   ├── components/     # Reusable UI components
+│   ├── contexts/       # React context providers
 │   ├── pages/         # Page components
 │   ├── services/      # API service layer
-│   ├── hooks/         # Custom React hooks
-│   ├── types/         # TypeScript type definitions
-│   └── utils/         # Utility functions
-├── public/           # Static assets
-└── package.json      # Project dependencies
+│   ├── App.js         # Root component
+│   ├── index.js       # Entry point
+│   └── index.css      # Global styles
+├── public/            # Static assets
+├── package.json       # Dependencies
+└── tailwind.config.js # Tailwind configuration
 ```
 
-## 🔧 Component Architecture
+## 🔍 Current Implementation
 
-- **Atomic Design Principles**
-- **Component Composition**
-- **Custom Hooks for Logic Reuse**
-- **Context for State Management**
+### Components
 
-## 📱 Features
+- Basic React components for displaying F1 data
+- Component-based architecture
+- Reusable UI elements
 
-- Responsive design for all devices
-- Real-time data updates
-- Interactive data visualizations
-- User authentication flow
-- Dark/Light theme support
-- Accessibility compliance
+### Routing
+
+- React Router for navigation
+- Basic route setup
+- Page components structure
+
+### Styling
+
+- Tailwind CSS integration
+- Responsive design basics
+- Custom CSS where needed
+
+### API Integration
+
+- Axios for API calls
+- Service layer for data fetching
+- Basic error handling
 
 ## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm or yarn
 
 ### Development Setup
 
@@ -73,97 +87,93 @@ npm test
 npm run build
 ```
 
-## 🎯 Code Quality
+## 📱 Features
 
-- ESLint configuration for code quality
-- Prettier for consistent formatting
-- TypeScript for type safety
-- Jest for unit and integration tests
-- React Testing Library for component tests
+### Current Features
 
-## 📈 Performance Optimization
+- Display F1 drivers and teams
+- View race information
+- Basic statistics display
+- Responsive layout
+- API integration
 
-- Code splitting and lazy loading
-- Image optimization
-- Caching strategies
-- Bundle size optimization
-- Performance monitoring
+### Pages
 
-## 🔐 Security Measures
+- Home page
+- Drivers list
+- Teams overview
+- Race calendar
+- Basic statistics
 
-- Input sanitization
-- CSRF protection
-- Secure authentication handling
-- Environment variable management
-- XSS prevention
+## 🎯 Future Improvements
 
-## 📚 State Management
+### UI Enhancements
 
-- React Context for global state
-- Local state with useState
-- Form state management
-- Cache management for API responses
+- [ ] Add loading states
+- [ ] Implement error boundaries
+- [ ] Add animations and transitions
+- [ ] Improve mobile responsiveness
+- [ ] Add dark/light theme support
 
-## 🌐 API Integration
+### Feature Additions
 
-- Axios instances configuration
-- Request/Response interceptors
-- Error handling
-- Response caching
-- Rate limiting handling
+- [ ] Add driver statistics charts
+- [ ] Implement team comparisons
+- [ ] Add race results visualization
+- [ ] Create interactive race calendar
+- [ ] Add search and filtering
 
-## 🎨 Styling Guidelines
+### Technical Improvements
 
-- Tailwind CSS utility classes
-- Responsive design patterns
-- CSS custom properties
-- Component-specific styles
-- Theme configuration
+- [ ] Convert to TypeScript
+- [ ] Add proper state management
+- [ ] Implement proper testing
+- [ ] Add error tracking
+- [ ] Optimize performance
+- [ ] Add PWA support
 
-## 📱 Responsive Design
+### Code Quality
 
-- Mobile-first approach
-- Breakpoint system
-- Fluid typography
-- Flexible layouts
-- Touch-friendly interactions
+- [ ] Add ESLint configuration
+- [ ] Implement Prettier
+- [ ] Add PropTypes validation
+- [ ] Improve code documentation
+- [ ] Add component stories
 
-## 🔍 Testing Strategy
+## 📝 Development Guidelines
 
-- Unit tests for utilities
-- Component testing
-- Integration tests
-- E2E testing setup
-- Test coverage reports
+### Component Structure
 
-## 📖 Documentation
-
-- Component documentation
-- API integration docs
-- State management patterns
-- Testing guidelines
-- Deployment procedures
-
-## 🚀 Deployment
-
-- Build optimization
-- Environment configuration
-- CI/CD setup
-- Performance monitoring
-- Error tracking
-
-## 👥 Contributing
-
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
-
-## 📝 Development Notes
-
-- Follow React best practices
-- Maintain consistent code style
-- Write meaningful commit messages
-- Document complex logic
 - Keep components focused and reusable
+- Use functional components
+- Implement proper prop validation
+- Follow component naming conventions
+
+### Styling Guidelines
+
+- Use Tailwind utility classes
+- Keep custom CSS minimal
+- Follow mobile-first approach
+- Maintain consistent spacing
+
+### Best Practices
+
+- Regular dependency updates
+- Code review process
+- Consistent commit messages
+- Documentation updates
+- Regular testing
+
+## 🔧 Available Scripts
+
+- `npm start`: Run development server
+- `npm test`: Run test suite
+- `npm build`: Build for production
+- `npm eject`: Eject from Create React App
+
+## 📚 Resources
+
+- [React Documentation](https://reactjs.org/)
+- [Tailwind CSS Documentation](https://tailwindcss.com/)
+- [React Router Documentation](https://reactrouter.com/)
+- [Axios Documentation](https://axios-http.com/)
