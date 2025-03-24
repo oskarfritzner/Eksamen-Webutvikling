@@ -1,52 +1,90 @@
 # F1 Stats Backend
 
-## ��️ Backend Overview
+## 🖥️ Backend Overview
 
-The backend of the F1 Stats application is built with ASP.NET Core Web API, providing a robust and type-safe API for Formula 1 data management. It features a clean architecture, comprehensive Swagger documentation, and modern C# development practices.
+The backend of the F1 Stats application is built with ASP.NET Core Web API, providing data for the Formula 1 statistics frontend. It uses SQLite for data storage and Swagger for API documentation.
 
 ## 🛠️ Technology Stack
 
-- **.NET 7**: Modern, cross-platform framework
-- **C#**: Type-safe programming language
+- **.NET**: Framework for building the API
+- **C#**: Programming language
 - **ASP.NET Core Web API**: Web API framework
 - **Entity Framework Core**: ORM for SQLite
-- **SQLite**: Lightweight, file-based database
-- **Swagger/OpenAPI**: API documentation and testing
-- **xUnit**: Testing framework
-- **Docker**: Containerization support
+- **SQLite**: Database
+- **Swagger**: API documentation
 
 ## 📁 Project Structure
 
 ```
 backend/
 ├── Controllers/           # API controllers
-├── Models/               # Domain models and DTOs
-├── Data/                 # DbContext and migrations
-├── Services/             # Business logic
-├── Configurations/       # App configuration
-├── Middleware/           # Custom middleware
-├── Extensions/           # Extension methods
-├── Tests/                # Test projects
-└── Properties/           # Launch settings
+├── Models/               # Data models
+├── Data/                 # DbContext and database configuration
+├── Properties/           # Launch settings
+└── appsettings.json     # Application configuration
 ```
 
-## 🎯 Features
+## 📊 Data Models
 
-- RESTful API endpoints with Swagger documentation
-- Entity Framework Core with SQLite
-- Dependency Injection
-- Middleware pipeline
-- Global error handling
-- Model validation
-- Logging system
-- CORS configuration
+```csharp
+public class Driver
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string Team { get; set; }
+    public string Nationality { get; set; }
+    public int Points { get; set; }
+}
+
+public class Team
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string Base { get; set; }
+    public int Points { get; set; }
+}
+
+public class Race
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string Circuit { get; set; }
+    public DateTime Date { get; set; }
+    public string Location { get; set; }
+}
+```
+
+## 📡 Current API Endpoints
+
+```csharp
+// Drivers
+GET     /api/drivers          // Get all drivers
+GET     /api/drivers/{id}     // Get driver by id
+POST    /api/drivers          // Create new driver
+PUT     /api/drivers/{id}     // Update driver
+DELETE  /api/drivers/{id}     // Delete driver
+
+// Teams
+GET     /api/teams            // Get all teams
+GET     /api/teams/{id}       // Get team by id
+POST    /api/teams            // Create new team
+PUT     /api/teams/{id}       // Update team
+DELETE  /api/teams/{id}       // Delete team
+
+// Races
+GET     /api/races            // Get all races
+GET     /api/races/{id}       // Get race by id
+POST    /api/races            // Create new race
+PUT     /api/races/{id}       // Update race
+DELETE  /api/races/{id}       // Delete race
+```
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-- .NET SDK 7.0 or higher
-- Visual Studio 2022 or VS Code
+- .NET SDK
+- Visual Studio or VS Code
 
 ### Development Setup
 
@@ -74,113 +112,49 @@ dotnet run
 https://localhost:5001/swagger
 ```
 
-## 📡 API Endpoints
+## 🔍 Current Implementation
 
-### F1 Data
-
-```csharp
-// Races
-GET     /api/races            // Get all races
-GET     /api/races/{id}       // Get race by id
-POST    /api/races            // Create new race
-PUT     /api/races/{id}       // Update race
-DELETE  /api/races/{id}       // Delete race
-
-// Drivers
-GET     /api/drivers          // Get all drivers
-GET     /api/drivers/{id}     // Get driver by id
-POST    /api/drivers          // Create new driver
-PUT     /api/drivers/{id}     // Update driver
-DELETE  /api/drivers/{id}     // Delete driver
-
-// Teams
-GET     /api/teams            // Get all teams
-GET     /api/teams/{id}       // Get team by id
-POST    /api/teams            // Create new team
-PUT     /api/teams/{id}       // Update team
-DELETE  /api/teams/{id}       // Delete team
-```
-
-## 📊 Data Models
-
-```csharp
-public class Driver
-{
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public string Team { get; set; }
-    public int Points { get; set; }
-    public string Nationality { get; set; }
-    public DateTime CreatedAt { get; set; }
-    public DateTime UpdatedAt { get; set; }
-}
-
-// Additional models...
-```
-
-## 🧪 Testing Strategy
-
-- Unit tests with xUnit
-- Integration tests
-- Controller tests
-- Service layer tests
-- Repository tests
-- In-memory database tests
-
-## 📝 Code Quality
-
-- C# coding conventions
-- .editorconfig for consistency
-- XML documentation
-- Code analyzers
-- StyleCop rules
-- Clean architecture principles
-
-## 🔒 Security
-
-- HTTPS enforcement
-- CORS policies
+- Basic CRUD operations for F1 data
+- Entity Framework Core with SQLite
+- Swagger API documentation
 - Model validation
-- Exception handling
-- Secure configuration
-- Input sanitization
+- Basic error handling
+- CORS configuration
 
-## 📈 Performance
+## 🎯 Future Improvements
 
-- Async/await patterns
-- Efficient querying
-- Response caching
-- Database indexing
-- Connection pooling
+### API Enhancements
 
-## 📚 Documentation
+- [ ] Add authentication and authorization
+- [ ] Implement comprehensive error handling
+- [ ] Add request/response logging
+- [ ] Implement caching
+- [ ] Add rate limiting
+- [ ] Expand F1 statistics endpoints
 
-- Swagger UI documentation
-- XML API documentation
-- Code documentation
-- Database schema
-- Setup instructions
+### Data Model Enhancements
 
-## 🔧 Development Tools
+- [ ] Add race results tracking
+- [ ] Implement championship standings
+- [ ] Add qualifying data
+- [ ] Track historical statistics
+- [ ] Add driver/team relationships
+- [ ] Include more detailed race information
 
-- Visual Studio 2022 or VS Code
-- SQL Browser for SQLite
-- Postman/Insomnia
-- Docker Desktop
-- Git
+### Development Improvements
 
-## 👥 Contributing
-
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
+- [ ] Add unit tests
+- [ ] Implement integration tests
+- [ ] Set up CI/CD pipeline
+- [ ] Add performance monitoring
+- [ ] Improve error logging
+- [ ] Add database migrations
 
 ## 📝 Development Notes
 
 - Follow C# coding conventions
-- Use async/await where appropriate
-- Document public APIs
-- Write comprehensive tests
-- Keep controllers thin, logic in services
+- Use meaningful variable names
+- Keep controllers focused on routing
+- Implement service layer for business logic
+- Document API changes
+- Regular database backups
