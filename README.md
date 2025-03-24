@@ -43,8 +43,7 @@ A modern, full-stack web application built to showcase Formula 1 data and statis
 1. Clone the repository
 
 ```bash
-git clone https://github.com/oskarfritzner/Eksamen-Webutvikling.git
-cd FullstackApp-f1
+git clone [https://github.com/oskarfritzner/Eksamen-Webutvikling.git](https://github.com/oskarfritzner/Fullstack-F1-App__Eksamen-Webutvikling.git)
 ```
 
 2. Start the Frontend
